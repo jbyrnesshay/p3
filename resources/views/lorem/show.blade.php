@@ -16,8 +16,8 @@ such as a page specific stylesheets.
 @section('content')
           
 
-        <?php echo $contents; ?>
-        
+        <!--display unescaped html-->
+       {!! $contents !!} 
       
         <!-- <p>Show book: {{ $contents }}</p> -->
      

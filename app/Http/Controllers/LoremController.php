@@ -1,13 +1,14 @@
 <?php
 
 namespace P3\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
 
 use P3\Http\Requests;
  
 use YoHang88\LetterAvatar\LetterAvatar;
-
+use P3\Myfiles;
+ 
 #create alias for Faker, to use for project data
 use Faker\Factory as Faker;
 
@@ -23,12 +24,33 @@ class LoremController extends Controller
     {
         # Validate the request....
         # Generate the lorem ipsum text
-       
+       /* $switch = 2;
+        if ($switch = 2) {
+            $array = explode("\n", file_get_contents('data/wordsEn.txt'));#reads contents of file
+    #wordsEn.txt dictionary courtesy of SIL international, file found at http://www-01.sil.org/linguistics/wordlists/english/
+    $dictionary = array_map('trim', $contents); #use array_map with trim to ensure there is no problematic accidental whitespace in array elements, creates final wordlist
+    return $dictionary;
+        }*/
+
+
         $howManyParagraphs = $request->input('paragraphs');
          #use badcow
         $generator = new \Badcow\LoremIpsum\Generator();
+        #$dict = new \myclasses\englishdict\EnglishDict();
+        #$dictionary = $dict->englishdict();
+        #$arrayit = ['cat', 'dog', 'fish'];
+        #$arrrayit = $dictionary;
+        #$generator->setWords($arrayit);
+        # with? setWords(array($words));
+        # with> addWords(array($words));
+        #getRandomWords($count)
+        #toSentence(array($words))
+        #$paragraphsax = $generator->getParagraphs($howManyParagraphs);
         $paragraphsax = $generator->getParagraphs($howManyParagraphs);
-        $contents = $paragraphsax;
+        #$sentencesax = $generator->getSentences($howManyParagraphs);
+        $sentencesax = $generator->getRandomWords($howManyParagraphs);
+        #$contents = $paragraphsax;
+        $contents = $sentencesax;
         #use joshtronic
         $testerator = new \joshtronic\LoremIpsum();
         # $contents = $testerator->paragraphs($howManyParagraphs);

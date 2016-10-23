@@ -25,7 +25,8 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "Myfiles/junk/EnglishDict.php"
         ],
         "psr-4": {
             "P3\\": "app/"
@@ -34,6 +35,7 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
+
         ]
     },
     "scripts": {
