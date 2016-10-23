@@ -25,13 +25,27 @@ class LoremController extends Controller
         # Generate the lorem ipsum text
        
         $howManyParagraphs = $request->input('paragraphs');
-        # Logic...
-        #$loremenator = \SBuck\Loremenator();
+         #use badcow
+        $generator = new \Badcow\LoremIpsum\Generator();
+        $paragraphsax = $generator->getParagraphs($howManyParagraphs);
+        $contents = $paragraphsax;
+        #use joshtronic
         $testerator = new \joshtronic\LoremIpsum();
-         $contents = $testerator->paragraphs($howManyParagraphs);
+        # $contents = $testerator->paragraphs($howManyParagraphs);
         #$text = $loremenator->getParagraphs($howManyParagraphs);
         # Display the results...
-        return view('lorem.show')->with('contents', $contents);
+        #return view('lorem.show')->with('contents', $contents);
+        #$contents = serialize($contents);
+        #$contents = serialize($contents);
+        #print_r($contents);
+        #$contents=serialize($contents);
+        $splitparagraphs = "";
+        for ($i=0; $i < count($contents); $i++) {
+            $splitparagraphs .= "<p>$contents[$i]</p>";
+        }
+        $contents = $splitparagraphs;    
+       
+       return view('lorem.show')->with('contents', $contents);
     }
     #lorem paragraphs correctly goiing to show
 
@@ -100,7 +114,7 @@ class LoremController extends Controller
          #using yohang88 letteravatar
         $avatar2 = new LetterAvatar('bachim byrnes-shay', 'square', 50);
                 
-        return $fuffn;
+        return $paragraphs;
        
        
        /*this works well

@@ -11,7 +11,7 @@
     </ul>
 <hr>
 how many paragraphs pf lorem ipsum?
-<form method='POST' action='/show'>
+<form method='POST' action='/lorem'>
     {{ csrf_field() }}
     <input type='text' name='paragraphs'>
     <input type='submit' value='Submit'>

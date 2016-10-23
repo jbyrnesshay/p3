@@ -14,18 +14,19 @@
  # View all items
 #Route::get('/tests', 'TestController@index')->name('p3.index');
 
-Route::post('/show', 'LoremController@getLoremIpsumText')->name('lorem.show');
-Route::get('/tests', 'TestController@index')->name('tests.index'); 
+Route::post('/lorem', 'LoremController@getLoremIpsumText')->name('lorem.process');
+Route::get('/', function () { 
+    return view('welcome');
+})->name('lorem.show');
 
-Route::get('/tests/create/{paragraphs}', 'LoremController@create')->name('lorem.store');
-
+ 
 Route::get('/contact', 'PageController@contact')->name('contact');
 
 Route::get('/help', 'PageController@help')->name('help');
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

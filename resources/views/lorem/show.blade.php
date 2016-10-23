@@ -14,14 +14,17 @@ such as a page specific stylesheets.
 @stop
 
 @section('content')
-     
-    @if($contents)
-        <h1>Show book: {{ $contents }}</h1>
-    @else
-        <h1>No book chosen</h1>
-    @endif
+          
 
+        <?php echo $contents; ?>
+        
+      
+        <!-- <p>Show book: {{ $contents }}</p> -->
      
+        <h1>No book chosen</h1>
+     
+
+ 
 
 @stop
 
