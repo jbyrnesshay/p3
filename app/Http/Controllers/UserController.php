@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use P3\Http\Requests;
 
-class TestController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        return 'hellow from testcontroller index';
+        //
     }
 
     /**
@@ -25,7 +25,7 @@ class TestController extends Controller
      */
     public function create()
     {
-        return 'hello from testcontroller create';
+        //
     }
 
     /**
