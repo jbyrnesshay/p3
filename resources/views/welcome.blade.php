@@ -10,7 +10,7 @@
     <p>This app provides two functions</p>
     <ul>
     	<li><a href="{{ route('lorem.start') }}">Lorem Ipsum Generator</a></li>
-    	<li>a Random User Generator</li>
+    	<li ><a href="{{ route('usergen.start')}}">a Random User Generator</a></li>
     </ul>
 <hr>
 how many paragraphs pf lorem ipsum?

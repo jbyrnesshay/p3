@@ -15,11 +15,15 @@
 #Route::get('/tests', 'TestController@index')->name('p3.index');
 
 Route::post('/lorem', 'LoremController@getLoremIpsumText')->name('lorem.process');
+Route::post('/usergen', 'UsergenController@generateUsers')->name('user.process');
 
 Route::get('/', function () { 
     return view('welcome');
 })->name('welcome');
 
+Route::get('/usergen', function() {
+    return view('/lorem/usergen');
+})->name('usergen.start');
 
 Route::get('/lorem', function() {
     return view('/lorem/lorem'); 
