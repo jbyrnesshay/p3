@@ -6,11 +6,19 @@ use Illuminate\Http\Request;
 
 use P3\Http\Requests;
  
+ 
+
+ 
+
+use App;
+ 
 use YoHang88\LetterAvatar\LetterAvatar;
 use P3\Myfiles;
  
 #create alias for Faker, to use for project data
 use Faker\Factory as Faker;
+#use App\classes\EnglishDict;
+use P3\Classes\EnglishDict;
 
 class LoremController extends Controller
 {
@@ -42,12 +50,16 @@ class LoremController extends Controller
         $generator = new \Badcow\LoremIpsum\Generator();
         #set mean # of sentences per paragraph to 4
         $generator->setParagraphMean(4.0);
-    
+        #$dictate = new EnglishDict();
+      #$dict = $dictate->dictionary;
         #$dict = new \myclasses\englishdict\EnglishDict();
         #$dictionary = $dict->englishdict();
         #$arrayit = ['cat', 'dog', 'fish'];
-        #$arrrayit = $dictionary;
-        #$generator->setWords($arrayit);
+        #$arrayit= $dict->englishdict();
+        #$arrayit = $dict;
+        #$doct = explode(" ", $arrayit);
+
+        #$generator->setWords($doct);
         # with? setWords(array($words));
         # with> addWords(array($words));
         #getRandomWords($count)
