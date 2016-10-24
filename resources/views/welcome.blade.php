@@ -13,17 +13,6 @@
     	<li ><a href="{{ route('usergen.start')}}">a Random User Generator</a></li>
     </ul>
 <hr>
-how many paragraphs pf lorem ipsum?
-<form method='POST' action='/lorem'>
-    {{ csrf_field() }}
-    <input type='text' name='paragraphs'>
-    <input type='submit' value='Submit'>
-</form>
-how many users?
-<form method='POST' action='/lorem'>
-    {{ csrf_field() }}
-    <input type='text' name='paragraphs'>
-    <input type='submit' value='Submit'>
-</form>
+ 
 
 @stop

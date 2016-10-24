@@ -26,11 +26,11 @@
 	</ul>
 
 	</nav>
-
+	 
 	<section>
 	@yield ('content')
 	</section>
-
+	
 	<footer>
 	<p>&copy; {{ date('Y')}}</p>
 	<p> contact</p>

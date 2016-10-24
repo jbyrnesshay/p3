@@ -22,6 +22,10 @@ class LoremController extends Controller
 
       public function getLoremIpsumText(Request $request)
     {
+        
+         $this->validate($request, [
+        'paragraphs' => 'required|Integer',
+    ]);
         # Validate the request....
         # Generate the lorem ipsum text
        /* $switch = 2;
@@ -86,6 +90,9 @@ class LoremController extends Controller
      */
     public function create()
     {   
+        $this->validate($request, [
+        'paragraphs' => 'required|min:1',
+    ]);
         #use badcow
         $generator = new \Badcow\LoremIpsum\Generator();
         $paragraphs = $generator->getParagraphs(5);

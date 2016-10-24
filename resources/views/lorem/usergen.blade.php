@@ -16,7 +16,18 @@ how many users to generate?
  
  	
        <h1> Fake User Generator </h1>
-       @if (isset($usergens)) {
+      
+       @if(count($errors) > 0)
+        <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+        </ul>
+       @endif
+             
+       
+
+       @if (isset($usergens)) 
         <article id="left">
 
         <?php $userstring = json_decode($usergens); ?>
@@ -37,7 +48,7 @@ how many users to generate?
         <!--<textarea> {!! $usergens!!} </textarea>-->
         <textarea> {{$usergens}} </textarea>
         </article>
-        }
+        
        @endif
 
 @stop

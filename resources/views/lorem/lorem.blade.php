@@ -9,14 +9,22 @@
      
 how many paragraphs pf lorem ipsum?
 <form method='POST' id="keep" action='/lorem'>
-    {{ csrf_field() }}
+    {{ csrf_field()}}
     <input type='text' name='paragraphs'>
     <input type='submit' value='Submit'>
 </form>
  
- 	
+ 		<div>
        <h1> Lorem Ipsum Generator </h1>
-       @if (isset($contents)) {
+
+       @if(count($errors) > 0)
+    	<ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    	</ul>
+	@endif
+       @if (isset($contents)) 
         <article id="left" class="lorem">
         <h2> Here is your Lorem Ipsum text: </h2>
         {!! $contents !!}
@@ -24,9 +32,10 @@ how many paragraphs pf lorem ipsum?
 
         <article id="right" class="lorem">
         <h2> Here is your Lorem Ipsul text with Paragraph tags: </h2>
-        <textarea>  {!! $contents !!} </textarea>
+        {{ $contents }}  
         </article>
-        }
+        </div>
+        
        @endif
 
 @stop

@@ -9,9 +9,7 @@ article.lorem p {
 
 }
 
- body section:nth-of-type(1) {
- 	margin-bottom: 2em;
- }
+  
 
  
 #left {
@@ -20,15 +18,17 @@ article.lorem p {
 	float:left;
 	bottom: 0;
 	margin-left: 5%;
-	margin-bottom: 4em;
+	padding-bottom: 5em;
+	 
 }
 #right {
 	 font-size: .8em;
 	width: 40%;
-	height: 50em;
+	height: 100em;
 	float: right;
 	 bottom: 0;
 	 margin-right: 5%;
+	 padding-bottom: 5em;
 }
 
 h2 {
@@ -47,12 +47,7 @@ footer p {
  	width: 20%;
  }
 
- main {
- 	 width: 100%;
- 	  
- 	 margin: 0 auto;
- 	 
- }
+  
 textarea {
 	 box-sizing:border-box;
 
@@ -74,6 +69,13 @@ footer {
 	bottom: 0;
 	width:100%;
 	background: aqua;
-	margin-top: 3em;
+	 
 	height: 2em;
+
+}
+main {
+	 
+}
+div {
+	height: 100%;
 }

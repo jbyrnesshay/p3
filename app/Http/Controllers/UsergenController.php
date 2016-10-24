@@ -18,6 +18,11 @@ class UsergenController extends Controller
 {
     public function generateUsers (Request $request)
     {
+    	  
+     $this->validate($request, [
+        'users' => 'required|Integer',
+    ]);
+
  	#use faker, instructions at https://github.com/fzaninotto/Faker
 		$faker = Faker::create();
 		$howManyUsers = $request->input('users');
