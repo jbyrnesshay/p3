@@ -36,6 +36,9 @@ class LoremController extends Controller
         $howManyParagraphs = $request->input('paragraphs');
          #use badcow
         $generator = new \Badcow\LoremIpsum\Generator();
+        #set mean # of sentences per paragraph to 4
+        $generator->setParagraphMean(4.0);
+    
         #$dict = new \myclasses\englishdict\EnglishDict();
         #$dictionary = $dict->englishdict();
         #$arrayit = ['cat', 'dog', 'fish'];
@@ -49,8 +52,8 @@ class LoremController extends Controller
         $paragraphsax = $generator->getParagraphs($howManyParagraphs);
         #$sentencesax = $generator->getSentences($howManyParagraphs);
         $sentencesax = $generator->getRandomWords($howManyParagraphs);
-        #$contents = $paragraphsax;
-        $contents = $sentencesax;
+        $contents = $paragraphsax;
+        #$contents = $sentencesax;
         #use joshtronic
         $testerator = new \joshtronic\LoremIpsum();
         # $contents = $testerator->paragraphs($howManyParagraphs);
@@ -67,7 +70,7 @@ class LoremController extends Controller
         }
         $contents = $splitparagraphs;    
        
-       return view('lorem.show')->with('contents', $contents);
+       return view('lorem.lorem')->with('contents', $contents);
     }
     #lorem paragraphs correctly goiing to show
 
