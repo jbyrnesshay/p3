@@ -3,7 +3,7 @@ html {
 
 }
 
-p {
+article.lorem p {
 	text-indent: 1.5em;
  	width: 100%;
 

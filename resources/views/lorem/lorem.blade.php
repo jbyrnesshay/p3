@@ -17,12 +17,12 @@ how many paragraphs pf lorem ipsum?
  	
        <h1> Lorem Ipsum Generator </h1>
        @if (isset($contents)) {
-        <article id="left">
+        <article id="left" class="lorem">
         <h2> Here is your Lorem Ipsum text: </h2>
         {!! $contents !!}
         </article>
 
-        <article id="right">
+        <article id="right" class="lorem">
         <h2> Here is your Lorem Ipsul text with Paragraph tags: </h2>
         <textarea>  {!! $contents !!} </textarea>
         </article>
