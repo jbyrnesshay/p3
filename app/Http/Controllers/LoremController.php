@@ -30,8 +30,8 @@ class LoremController extends Controller
 
       public function getLoremIpsumText(Request $request)
     {
-        
-         $this->validate($request, [
+         
+         $this->validate($request, ['switch'=> 'required',
         'paragraphs' => 'required|Integer',
     ]);
         # Validate the request....
@@ -43,15 +43,26 @@ class LoremController extends Controller
     $dictionary = array_map('trim', $contents); #use array_map with trim to ensure there is no problematic accidental whitespace in array elements, creates final wordlist
     return $dictionary;
         }*/
-
-
-        $howManyParagraphs = $request->input('paragraphs');
-         #use badcow
+         $howManyParagraphs = $request->input('paragraphs');
+         $dictselector = $request->input('switch');
         $generator = new \Badcow\LoremIpsum\Generator();
         #set mean # of sentences per paragraph to 4
         $generator->setParagraphMean(4.0);
-        #$dictate = new EnglishDict();
-      #$dict = $dictate->dictionary;
+
+        if ($dictselector == 'customEng') {
+            $dictate = new \P3\Classes\EnglishDict();
+            $dict = $dictate->dictionary;
+            $setit = $generator->setWords($dict);
+        }
+       
+         #use badcow
+        
+        
+        
+       
+      
+      #DD($dict);
+      #DD($dict[10]);
         #$dict = new \myclasses\englishdict\EnglishDict();
         #$dictionary = $dict->englishdict();
         #$arrayit = ['cat', 'dog', 'fish'];
@@ -59,7 +70,7 @@ class LoremController extends Controller
         #$arrayit = $dict;
         #$doct = explode(" ", $arrayit);
 
-        #$generator->setWords($doct);
+        
         # with? setWords(array($words));
         # with> addWords(array($words));
         #getRandomWords($count)
@@ -85,6 +96,7 @@ class LoremController extends Controller
             $splitparagraphs .= "<p>$contents[$i]</p>";
         }
         $contents = $splitparagraphs;    
+
        
        return view('lorem.lorem')->with('contents', $contents);
     }

@@ -1,22 +1,41 @@
 <?php	
 
-	namespace P3\Classes;
- 	use app\classes;
- 	class EnglishDict {
- 		public $dictior = "";
- 		public $dictionary = '';
-		public function englishdict() {
-		 $dictio= file_get_contents(require __DIR__ .'\wordsEn.txt');
-		 
-		 $dictior = explode(" ", $dictio);
-		 $dictionary = array_map('trim', $dictior);
-		 return $this->dictionary = $value;
-}
-	#$lines = file(require __DIR__ .'\wordsEn.txt', FILE_IGNORE_NEW_LINES); 
+	namespace P3\classes;
+	use App;
+	use P3;
+	use Illuminate\Http\Request;
+	use Rych\Random\Random;
 
-	#wordsEn.txt dictionary courtesy of SIL international, file found at http://www-01.sil.org/linguistics/wordlists/english/
-	#$dictionary = array_map('trim', $lines); #use array_map with trim to ensure there is no problematic accidental whitespace in array elements, creates final wordlist
+use P3\Http\Requests;
+
+
+ 	class EnglishDict {
+ 		# public $random = new Rych\Random\Random();
+ 		public $dictionary;
+ 		public $dictato;
+		//public function englishdict() {
+ 		public function __construct() {
+ 			$random = new \Rych\Random\Random();
+		 
+		  $dicto = \File::get(storage_path('wordsEn.txt'));
+		 
+		$dictior = explode("\r\n", $dicto);
+		$dictiot = array_map('trim', $dictior);
+		 $size = count($dictiot);
+		 
+		for ($i=0; $i < 500; $i++) {
+		 $randomnumber= $random->getRandomInteger(1, $size);
+		#$dictioz[$i] = $randomnumber;
+		#$dictiot[$random->getRandomInteger(1, $size)];
+		$dictato[$i] = $dictiot[$randomnumber];
+		}
+		 
+		$this->dictionary = $dictato;
+		 
+		  
+		  
+}
+	 
 	 
 
-
-}
+}      

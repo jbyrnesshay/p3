@@ -11,10 +11,8 @@
         "badcow/lorem-ipsum": "dev-master",
         "joshtronic/php-loremipsum": "dev-master",
         "nubs/random-name-generator": "^2.0",
-        "yohang88/letter-avatar": "^1.0"
-
-
-    },
+        "yohang88/letter-avatar": "^1.0",
+        "rych/random": "^0.1.0"    },
     
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -25,9 +23,7 @@
     },
     "autoload": {
         "classmap": [
-            "database"
-            
-        ],
+            "database"],
         "psr-4": {
             "P3\\": "app/"
         }
