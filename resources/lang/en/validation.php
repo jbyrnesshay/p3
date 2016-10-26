@@ -22,7 +22,7 @@ return [
     'array'                => 'The :attribute must be an array.',
     'before'               => 'The :attribute must be a date before :date.',
     'between'              => [
-        'numeric' => 'The :attribute field must be between :min and :max.',
+        'numeric' => 'Required: :attribute must be between :min and :max.',
         'file'    => 'The :attribute must be between :min and :max kilobytes.',
         'string'  => 'The :attribute must be between :min and :max characters.',
         'array'   => 'The :attribute must have between :min and :max items.',
@@ -43,7 +43,7 @@ return [
     'image'                => 'The :attribute must be an image.',
     'in'                   => 'The selected :attribute is invalid.',
     'in_array'             => 'The :attribute field does not exist in :other.',
-    'integer'              => 'The :attribute field must be an integer.',
+    'integer'              => 'Required: number of :attribute must be an integer.',
     'ip'                   => 'The :attribute must be a valid IP address.',
     'json'                 => 'The :attribute must be a valid JSON string.',
     'max'                  => [
@@ -98,8 +98,8 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
-        ],
-    ],
+        ], 'paragraphs' => ['required' => 'Required: enter the number of :attribute you request' 
+    ], 'users' => ['required' => 'Required: enter the number of :attribute you request'], 'languageselector' => ['required' => 'Required: make your :attribute selection']],
 
     /*
     |--------------------------------------------------------------------------
@@ -112,6 +112,6 @@ return [
     |
     */
 
-    'attributes' => ['languageselector' => 'language selector'],
+    'attributes' => ['languageselector' => 'language'],
 
 ];
