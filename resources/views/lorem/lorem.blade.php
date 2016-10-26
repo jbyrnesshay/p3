@@ -28,7 +28,7 @@ how many users to generate?
        @endif
              
        
-  <img src="<?php echo $avatar ?>" />
+   
        @if (isset($usergens)) 
         <article id="left">
 
