@@ -56,7 +56,7 @@ class UsergenController extends Controller
         $initials[$i] = $firstname[$i][0].$lastname[$i][0];
         $avatar[$i] = new \YoHang88\LetterAvatar\LetterAvatar($name[$i]);
         $gavatar[$i] = $avatar[$i];
-        $havatar[$i] = \Avatar::create('Joko Widodo')->toBase64();
+        $havatar[$i] = \Avatar::create($name[$i])->toBase64();
         $javatar[$i] = $havatar[$i];
          
         $profileText[$i]='';
