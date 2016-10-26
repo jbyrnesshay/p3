@@ -10,7 +10,7 @@ use P3\Http\Requests;
 
 use App;
 
-use YoHang88\LetterAvatar\LetterAvatar;
+ 
 use P3\Myfiles;
 
 #create alias for Faker, to use for project data

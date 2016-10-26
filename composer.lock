@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa51180afa7e76f2ba541ca882a62c6e",
-    "content-hash": "1a95332a042a8a6be1fa1434554617cb",
+    "hash": "a29d683c2be81aac31f468b731f40192",
+    "content-hash": "5ca382787fe0ab7eedc0bcfe6aafe653",
     "packages": [
         {
             "name": "badcow/lorem-ipsum",
@@ -573,16 +573,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.20",
+            "version": "v5.3.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "09f2515b72eba3229dfce44a801852b9b8d011e2"
+                "reference": "140ad823863d5cc6f4580f1cdf9b18b9a6a457f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/09f2515b72eba3229dfce44a801852b9b8d011e2",
-                "reference": "09f2515b72eba3229dfce44a801852b9b8d011e2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/140ad823863d5cc6f4580f1cdf9b18b9a6a457f4",
+                "reference": "140ad823863d5cc6f4580f1cdf9b18b9a6a457f4",
                 "shasum": ""
             },
             "require": {
@@ -697,7 +697,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-10-25 13:38:24"
+            "time": "2016-10-26 13:27:05"
         },
         {
             "name": "laravolt/avatar",
@@ -2342,55 +2342,6 @@
             "time": "2016-09-29 14:13:09"
         },
         {
-            "name": "symforge/letter-avatar",
-            "version": "v1.1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symforge/letter-avatar.git",
-                "reference": "6e6ed38e2900177a78622571275db84e37877a0a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symforge/letter-avatar/zipball/6e6ed38e2900177a78622571275db84e37877a0a",
-                "reference": "6e6ed38e2900177a78622571275db84e37877a0a",
-                "shasum": ""
-            },
-            "require": {
-                "intervention/image": "^2.3",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "YoHang88\\LetterAvatar\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yoga Hanggara",
-                    "email": "yohang88@gmail.com",
-                    "homepage": "https://yohang.net",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Generate user avatar using name initials letter.",
-            "homepage": "https://github.com/yohang88/letter-avatar",
-            "keywords": [
-                "avatar",
-                "letter avatar",
-                "profile picture"
-            ],
-            "time": "2016-10-17 18:39:32"
-        },
-        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -2439,55 +2390,6 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
-        },
-        {
-            "name": "yohang88/letter-avatar",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yohang88/letter-avatar.git",
-                "reference": "28c0b87f055efdf871e48f0ae767651a4ad19582"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yohang88/letter-avatar/zipball/28c0b87f055efdf871e48f0ae767651a4ad19582",
-                "reference": "28c0b87f055efdf871e48f0ae767651a4ad19582",
-                "shasum": ""
-            },
-            "require": {
-                "intervention/image": "^2.3",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "YoHang88\\LetterAvatar\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Yoga Hanggara",
-                    "email": "yohang88@gmail.com",
-                    "homepage": "https://yohang.net",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Generate user avatar using name initials letter.",
-            "homepage": "https://github.com/yohang88/letter-avatar",
-            "keywords": [
-                "avatar",
-                "letter avatar",
-                "profile picture"
-            ],
-            "time": "2016-08-20 01:10:08"
         }
     ],
     "packages-dev": [

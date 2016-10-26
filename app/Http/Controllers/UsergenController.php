@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use P3\Http\Requests;
  
-use YoHang88\LetterAvatar;
+ 
 use P3\Myfiles;
  
 #create alias for Faker, to use for project data
@@ -54,8 +54,7 @@ class UsergenController extends Controller
         $randomnumber= $random->getRandomInteger(0, 7);
         $email[$i] = strtolower($string2).$emailprovider[$randomnumber];
         $initials[$i] = $firstname[$i][0].$lastname[$i][0];
-        $avatar[$i] = new \YoHang88\LetterAvatar\LetterAvatar($name[$i]);
-        $gavatar[$i] = $avatar[$i];
+  
         $havatar[$i] = \Avatar::create($name[$i])->toBase64();
         $javatar[$i] = $havatar[$i];
          
@@ -75,7 +74,7 @@ class UsergenController extends Controller
 
         $usergens = json_encode($userArray);
          
-       //$avatar = new \YoHang88\LetterAvatar\LetterAvatar('Steven Spielberg');
+       
         
        return view('lorem.usergen')->with('usergens', $usergens)->with('javatar', $javatar);
     }

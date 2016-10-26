@@ -11,7 +11,8 @@ and for number of paragraphs.  Additionally, the output is presented in two ways
 text only and text with html <p> tags.  The Lorem Ipsum generator uses the external 
 package Badcow.  The Latin configuration uses the base functionality of Badcow. 
 If the user selects thee English configuration, a custom class EnglishDict is instantiated, and
-this class uses an added text file (in storage). The word list is based on a word list (text file) of 109582 English words..  RychRandom is used
+this class uses an added text file (in storage). Uses badcows setwords method, which can be found
+on inspection of badcow generator.php file.  The word list is based on a word list (text file) of 109582 English words..  RychRandom is used
 to randomly select 500 of them for the purposes of constructing the app dictionary (per each usage).
 Badcow properties, including a Badcow property setwords() which allows to assign a custom dictionary,
 are then used to present this English "Lorem Ipsum".   
