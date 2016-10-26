@@ -1,7 +1,9 @@
 @extends('layouts.master')
 
+ 
 @section('head')
-@endsection
+    <link href="/css/styles.css" type="text/css" rel='stylesheet'>
+@stop
 
 @section('title', 'Developers Best Friend')
 

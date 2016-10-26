@@ -13,6 +13,9 @@
     @yield('head')
 
 </head>
+<!DOCTYPE html>
+ 
+
 
 	<body>
 

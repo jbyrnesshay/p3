@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb2a2a9899d53f37669fef685a7e7eed",
-    "content-hash": "4fedf1383d8f6348ad44bf5d3ad3d549",
+    "hash": "9b0317ae427042f55b4d7a7b7be8d0db",
+    "content-hash": "ee6735712fee29e6a6a3623eff39171e",
     "packages": [
         {
             "name": "badcow/lorem-ipsum",
@@ -2227,6 +2227,55 @@
                 "dump"
             ],
             "time": "2016-09-29 14:13:09"
+        },
+        {
+            "name": "symforge/letter-avatar",
+            "version": "v1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symforge/letter-avatar.git",
+                "reference": "6e6ed38e2900177a78622571275db84e37877a0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symforge/letter-avatar/zipball/6e6ed38e2900177a78622571275db84e37877a0a",
+                "reference": "6e6ed38e2900177a78622571275db84e37877a0a",
+                "shasum": ""
+            },
+            "require": {
+                "intervention/image": "^2.3",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "YoHang88\\LetterAvatar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yoga Hanggara",
+                    "email": "yohang88@gmail.com",
+                    "homepage": "https://yohang.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate user avatar using name initials letter.",
+            "homepage": "https://github.com/yohang88/letter-avatar",
+            "keywords": [
+                "avatar",
+                "letter avatar",
+                "profile picture"
+            ],
+            "time": "2016-10-17 18:39:32"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -12,7 +12,8 @@
         "joshtronic/php-loremipsum": "dev-master",
         "nubs/random-name-generator": "^2.0",
         "yohang88/letter-avatar": "^1.0",
-        "rych/random": "^0.1.0"
+        "rych/random": "^0.1.0",
+        "symforge/letter-avatar": "^1.1"
      },
     
     "require-dev": {
