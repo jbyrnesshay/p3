@@ -82,16 +82,5 @@ class UsergenController extends Controller
     
      
     
-
-      public function junk() {
-      	['name'=>$name, 'password'=>$password, 
-        'address'=>$address, 'phone'=>$phone];
-        for ($i=0; $i < $howManyUsers; $i++) {
-     	$name[$i] = $faker->name;
-        $address[$i] = $faker->address;
-        $phone[$i] = $faker->phone;
-        $password[$i] = $faker->password;
-
-     }
-      }
+ 
   }

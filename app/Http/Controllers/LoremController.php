@@ -28,19 +28,15 @@ class LoremController extends Controller
 
       public function getLoremIpsumText(Request $request)
     {
-
+             # Validate the request....
          $this->validate($request, ['switch'=> 'required',
         'paragraphs' => 'required|Integer',
     ]);
-        # Validate the request....
+       
         # Generate the lorem ipsum text
-       /* $switch = 2;
-        if ($switch = 2) {
-            $array = explode("\n", file_get_contents('data/wordsEn.txt'));#reads contents of file
-    #wordsEn.txt dictionary courtesy of SIL international, file found at http://www-01.sil.org/linguistics/wordlists/english/
-    $dictionary = array_map('trim', $contents); #use array_map with trim to ensure there is no problematic accidental whitespace in array elements, creates final wordlist
-    return $dictionary;
-        }*/
+      
+
+
          $howManyParagraphs = $request->input('paragraphs');
          $dictselector = $request->input('switch');
         $generator = new \Badcow\LoremIpsum\Generator();
@@ -56,24 +52,9 @@ class LoremController extends Controller
          #use badcow
 
         $thing = \Session::get('switch');
-
-
-
-      #DD($dict);
-      #DD($dict[10]);
-        #$dict = new \myclasses\englishdict\EnglishDict();
-        #$dictionary = $dict->englishdict();
-        #$arrayit = ['cat', 'dog', 'fish'];
-        #$arrayit= $dict->englishdict();
-        #$arrayit = $dict;
-        #$doct = explode(" ", $arrayit);
-
-
-        # with? setWords(array($words));
-        # with> addWords(array($words));
-        #getRandomWords($count)
+    #getRandomWords($count)
         #toSentence(array($words))
-        #$paragraphsax = $generator->getParagraphs($howManyParagraphs);
+        
         $paragraphsax = $generator->getParagraphs($howManyParagraphs);
         #$sentencesax = $generator->getSentences($howManyParagraphs);
         $sentencesax = $generator->getRandomWords($howManyParagraphs);
@@ -82,13 +63,7 @@ class LoremController extends Controller
         #use joshtronic
         $testerator = new \joshtronic\LoremIpsum();
         # $contents = $testerator->paragraphs($howManyParagraphs);
-        #$text = $loremenator->getParagraphs($howManyParagraphs);
-        # Display the results...
-        #return view('lorem.show')->with('contents', $contents);
-        #$contents = serialize($contents);
-        #$contents = serialize($contents);
-        #print_r($contents);
-        #$contents=serialize($contents);
+         
         $splitparagraphs='';
         for ($i=0; $i < count($contents); $i++) {
             $splitparagraphs .= "<p>$contents[$i]</p>";
@@ -107,6 +82,10 @@ class LoremController extends Controller
     {
         //
     }
+
+    
+
+
 
     /**
      * Show the form for creating a new resource.
