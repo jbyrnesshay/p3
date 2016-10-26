@@ -8,13 +8,11 @@ use P3\Http\Requests;
  
  
 
- 
-
 use App;
- 
+
 use YoHang88\LetterAvatar\LetterAvatar;
 use P3\Myfiles;
- 
+
 #create alias for Faker, to use for project data
 use Faker\Factory as Faker;
 #use App\classes\EnglishDict;
@@ -30,7 +28,7 @@ class LoremController extends Controller
 
       public function getLoremIpsumText(Request $request)
     {
-         
+
          $this->validate($request, ['switch'=> 'required',
         'paragraphs' => 'required|Integer',
     ]);
@@ -54,13 +52,13 @@ class LoremController extends Controller
             $dict = $dictate->dictionary;
             $setit = $generator->setWords($dict);
         }
-       
+
          #use badcow
-        
+
         $thing = \Session::get('switch');
-        
-       
-      
+
+
+
       #DD($dict);
       #DD($dict[10]);
         #$dict = new \myclasses\englishdict\EnglishDict();
@@ -70,7 +68,7 @@ class LoremController extends Controller
         #$arrayit = $dict;
         #$doct = explode(" ", $arrayit);
 
-        
+
         # with? setWords(array($words));
         # with> addWords(array($words));
         #getRandomWords($count)
@@ -97,9 +95,9 @@ class LoremController extends Controller
 
         }
         $contentsarray = $contents;
-        $contents = $splitparagraphs;    
-        
-       
+        $contents = $splitparagraphs;
+
+
        return view('lorem.lorem')->with('contents', $contents)->with('contentsarray', $contentsarray);
     }
     #lorem paragraphs correctly goiing to show
@@ -115,7 +113,7 @@ class LoremController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
         $this->validate($request, [
         'paragraphs' => 'required|min:1',
     ]);
@@ -168,71 +166,15 @@ class LoremController extends Controller
          #$haha = $generator2->getName();
          $generato3 = new \Nubs\RandomNameGenerator\Alliteration();
          $haha = $generato3->getName();
-         
+
          #using yohang88 letteravatar
         $avatar2 = new LetterAvatar('bachim byrnes-shay', 'square', 50);
-                
+
         return $paragraphs;
-       
-       
+
+
        /*this works well
        return view('tests.create')->with('avatar', $avatar2);
             */
    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
