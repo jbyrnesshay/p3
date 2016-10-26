@@ -26,14 +26,16 @@ how many users to generate?
         @endforeach
         </ul>
        @endif
-             
        
-  <img src="<?php echo $avatar ?>" />
+ 
        @if (isset($usergens)) 
         <article id="left">
+       <!-- <img src="<?php// echo $avatar ?>" />-->
+        
 
         <?php $userstring = json_decode($usergens); ?>
         <h2> Here are your users: </h2>
+        <?php $i=0; ?>
         <?php foreach ($userstring as $user) {
                 echo '<p>';
                 echo 'name: '.$user->firstname.' '.$user->lastname.' <br>';
@@ -42,12 +44,17 @@ how many users to generate?
                 echo 'email: '.$user->email.'<br>';
                 echo 'passsord: '.htmlentities($user->password).'<br>';
                 echo 'initials: '.$user->initials.'<br>';
-                echo 'profile: '.$user->profiletext;
-                echo 'avatar: '.$avatar;
-                echo '</p>';
-            }
-             
+                echo 'profile: '.$user->profiletext; 
+                
+               
         ?>
+                <img src="<?php echo $gavatar[$i]?>">
+                </p>
+        <?php  $i++;}
+        ?>
+        
+
+       
         
         </article>
 

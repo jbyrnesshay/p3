@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use P3\Http\Requests;
  
-use YoHang88\LetterAvatar\LetterAvatar;
+use YoHang88\LetterAvatar;
 use P3\Myfiles;
  
 #create alias for Faker, to use for project data
@@ -44,6 +44,7 @@ class UsergenController extends Controller
      for ($i=0; $i < $howManyUsers; $i++) {
      	$firstname[$i] = $faker->firstName;
         $lastname[$i] = $faker->lastName;
+        $name[$i] = $firstname[$i]." ".$lastname[$i];
         $address[$i] = $faker->address;
         $phone[$i] = $faker->phoneNumber;
 
@@ -53,6 +54,8 @@ class UsergenController extends Controller
         $randomnumber= $random->getRandomInteger(0, 7);
         $email[$i] = strtolower($string2).$emailprovider[$randomnumber];
         $initials[$i] = $firstname[$i][0].$lastname[$i][0];
+        $avatar[$i] = new \YoHang88\LetterAvatar\LetterAvatar($name[$i]);
+        $gavatar[$i] = $avatar[$i];
         $profileText[$i]='';
         if ($profiler) {
             
@@ -61,16 +64,17 @@ class UsergenController extends Controller
             $random3 = $random->getRandomInteger(0, 11);
             $profileText[$i] = $array1[$random1].$firstname[$i].$array2[$random2].$array3[$random3].$filler;
         }
+        
         $userArray[$i] = ['firstname'=>$firstname[$i], 'lastname'=>$lastname[$i], 'password'=>$password[$i], 
-        'address'=>$address[$i], 'phone'=>$phone[$i], 'email'=>$email[$i], 'initials'=>$initials[$i], 'profiletext' =>$profileText[$i]  ];
+        'address'=>$address[$i], 'phone'=>$phone[$i], 'email'=>$email[$i], 'initials'=>$initials[$i], 'profiletext' =>$profileText[$i], 'avatar'=>$avatar[$i]  ];
      }
    
 
         $usergens = json_encode($userArray);
          
-       $avatar = new LetterAvatar('Steven Spielberg');
+       //$avatar = new \YoHang88\LetterAvatar\LetterAvatar('Steven Spielberg');
        
-       return view('lorem.usergen')->with('usergens', $usergens)->with('avatar', $avatar);
+       return view('lorem.usergen')->with('usergens', $usergens)->with('gavatar', $gavatar);
     }
     
      
