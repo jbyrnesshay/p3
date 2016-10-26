@@ -10,6 +10,8 @@
 how many users to generate?
 <form method='POST' id="keep" action='/usergen'>
     {{ csrf_field() }}
+    <input type = "checkbox" name ="icon"> include icon?
+    <input type = "checkbox" name ="profile"> include profile?
     <input type='text' name='users'>
     <input type='submit' value='Submit'>
 </form>
@@ -34,13 +36,19 @@ how many users to generate?
         <h2> Here are your users: </h2>
         <?php foreach ($userstring as $user) {
                 echo '<p>';
-                echo 'name: '.$user->name.' <br>';
+                echo 'name: '.$user->firstname.' '.$user->lastname.' <br>';
                 echo 'address: '.$user->address.' <br>';
                 echo 'phone: '.$user->phone.'<br>';
-                echo 'passsord: '.$user->password;
+                echo 'email: '.$user->email.'<br>';
+                echo 'passsord: '.htmlentities($user->password).'<br>';
+                echo 'initials: '.$user->initials.'<br>';
+                echo 'profile: '.$user->profiletext;
+                
                 echo '</p>';
             }
+             
         ?>
+        
         </article>
 
         <article id="right">

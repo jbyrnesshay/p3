@@ -10,8 +10,10 @@
 how many paragraphs pf lorem ipsum?
 <form method='POST' id="keep" action='/lorem'>
     {{ csrf_field()}}
-    <input type="radio" name="switch" value="standard" checked>standard
+    <input type="radio" name="switch" value="standard"> latin
+    
     <input type="radio" name="switch" value="customEng"> english <br>
+     
     <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
     <input type='submit' value='Submit'>
 </form>
@@ -29,12 +31,20 @@ how many paragraphs pf lorem ipsum?
        @if (isset($contents)) 
         <article id="left" class="lorem">
         <h2> Here is your Lorem Ipsum text: </h2>
-        {!! $contents !!}
+          {!! $contents !!}
+            
+      
         </article>
 
         <article id="right" class="lorem">
         <h2> Here is your Lorem Ipsul text with Paragraph tags: </h2>
-        {{ $contents }}  
+        @foreach($contentsarray as $paragraph)
+            {{"<p>"}} {{$paragraph}} {{"</p>"}}<p></p>
+           
+        @endforeach
+
+      
+         
         </article>
         </div>
         

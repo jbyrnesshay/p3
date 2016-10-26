@@ -57,7 +57,7 @@ class LoremController extends Controller
        
          #use badcow
         
-        
+        $thing = \Session::get('switch');
         
        
       
@@ -91,14 +91,16 @@ class LoremController extends Controller
         #$contents = serialize($contents);
         #print_r($contents);
         #$contents=serialize($contents);
-        $splitparagraphs = "";
+        $splitparagraphs='';
         for ($i=0; $i < count($contents); $i++) {
             $splitparagraphs .= "<p>$contents[$i]</p>";
-        }
-        $contents = $splitparagraphs;    
 
+        }
+        $contentsarray = $contents;
+        $contents = $splitparagraphs;    
+        
        
-       return view('lorem.lorem')->with('contents', $contents);
+       return view('lorem.lorem')->with('contents', $contents)->with('contentsarray', $contentsarray);
     }
     #lorem paragraphs correctly goiing to show
 

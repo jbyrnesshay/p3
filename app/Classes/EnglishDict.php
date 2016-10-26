@@ -29,8 +29,13 @@ use P3\Http\Requests;
 		#$dictiot[$random->getRandomInteger(1, $size)];
 		$dictato[$i] = $dictiot[$randomnumber];
 		}
-		 
+		#$again = $dictiot[array_rand($dictiot, 1000)];
+		/* for ($i=0; $i<count($again); $i++) {
+		 	$dictato[$i] = $dictiot[$again[$i]];
+		 }*/
 		$this->dictionary = $dictato;
+		#$this->dictionary = $again;
+		 
 		 
 		  
 		  
