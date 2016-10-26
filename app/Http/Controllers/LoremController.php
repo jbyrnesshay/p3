@@ -29,16 +29,19 @@ class LoremController extends Controller
       public function getLoremIpsumText(Request $request)
     {
              # Validate the request....
-         $this->validate($request, ['switch'=> 'required',
-        'paragraphs' => 'required|Integer',
+    
+        
+         $this->validate($request, ['languageselector'=> 'required',
+        'paragraphs' => 'required|Integer|between:1,50', 
     ]);
+         
        
         # Generate the lorem ipsum text
       
 
 
          $howManyParagraphs = $request->input('paragraphs');
-         $dictselector = $request->input('switch');
+         $dictselector = $request->input('languageselector');
         $generator = new \Badcow\LoremIpsum\Generator();
         #set mean # of sentences per paragraph to 4
         $generator->setParagraphMean(4.0);
@@ -51,7 +54,7 @@ class LoremController extends Controller
 
          #use badcow
 
-        $thing = \Session::get('switch');
+        $thing = \Session::get('languageselector');
     #getRandomWords($count)
         #toSentence(array($words))
         

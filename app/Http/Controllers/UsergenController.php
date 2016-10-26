@@ -20,7 +20,7 @@ class UsergenController extends Controller
     {
     	  
      $this->validate($request, [
-        'users' => 'required|Integer',
+        'users' => 'required|Integer|between:1,50',
     ]);
 
  	#use faker, instructions at https://github.com/fzaninotto/Faker

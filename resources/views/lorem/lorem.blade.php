@@ -10,9 +10,9 @@
 how many paragraphs pf lorem ipsum?
 <form method='POST' id="keep" action='/lorem'>
     {{ csrf_field()}}
-    <input type="radio" name="switch" value="standard"> latin
+    <input type="radio" name="languageselector" value="standard"> latin
 
-    <input type="radio" name="switch" value="customEng"> english <br>
+    <input type="radio" name="languageselector" value="customEng"> english <br>
 
     <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
     <input type='submit' value='Submit'>
