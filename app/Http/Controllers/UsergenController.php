@@ -56,6 +56,9 @@ class UsergenController extends Controller
         $initials[$i] = $firstname[$i][0].$lastname[$i][0];
         $avatar[$i] = new \YoHang88\LetterAvatar\LetterAvatar($name[$i]);
         $gavatar[$i] = $avatar[$i];
+        $havatar[$i] = \Avatar::create('Joko Widodo')->toBase64();
+        $javatar[$i] = $havatar[$i];
+         
         $profileText[$i]='';
         if ($profiler) {
             
@@ -66,15 +69,15 @@ class UsergenController extends Controller
         }
         
         $userArray[$i] = ['firstname'=>$firstname[$i], 'lastname'=>$lastname[$i], 'password'=>$password[$i], 
-        'address'=>$address[$i], 'phone'=>$phone[$i], 'email'=>$email[$i], 'initials'=>$initials[$i], 'profiletext' =>$profileText[$i], 'avatar'=>$avatar[$i]  ];
+        'address'=>$address[$i], 'phone'=>$phone[$i], 'email'=>$email[$i], 'initials'=>$initials[$i], 'profiletext' =>$profileText[$i], 'havatar'=>$havatar[$i]  ];
      }
    
 
         $usergens = json_encode($userArray);
          
        //$avatar = new \YoHang88\LetterAvatar\LetterAvatar('Steven Spielberg');
-       
-       return view('lorem.usergen')->with('usergens', $usergens)->with('gavatar', $gavatar);
+        
+       return view('lorem.usergen')->with('usergens', $usergens)->with('javatar', $javatar);
     }
     
      

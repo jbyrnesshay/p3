@@ -50,7 +50,7 @@ how many users to generate?
                 
                
         ?>
-                <img src="<?php echo $gavatar[$i]?>">
+                <img src="<?php echo $javatar[$i]?>">
                 </p>
         <?php  $i++;}
         ?>
