@@ -28,7 +28,7 @@ how many users to generate?
        @endif
              
        
-
+  <img src="<?php echo $avatar ?>" />
        @if (isset($usergens)) 
         <article id="left">
 
@@ -43,7 +43,7 @@ how many users to generate?
                 echo 'passsord: '.htmlentities($user->password).'<br>';
                 echo 'initials: '.$user->initials.'<br>';
                 echo 'profile: '.$user->profiletext;
-                
+                echo 'avatar: '.$avatar;
                 echo '</p>';
             }
              

@@ -96,6 +96,7 @@ class LoremController extends Controller
         }
         $contentsarray = $contents;
         $contents = $splitparagraphs;
+        
 
 
        return view('lorem.lorem')->with('contents', $contents)->with('contentsarray', $contentsarray);

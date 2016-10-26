@@ -68,9 +68,9 @@ class UsergenController extends Controller
 
         $usergens = json_encode($userArray);
          
+       $avatar = new LetterAvatar('Steven Spielberg');
        
-       
-       return view('lorem.usergen')->with('usergens', $usergens);
+       return view('lorem.usergen')->with('usergens', $usergens)->with('avatar', $avatar);
     }
     
      
