@@ -11,13 +11,15 @@
 <h2 class="pageheading"> Fake User Generator </h2>
      
 <h3>how many users to generate?</h3>
-<form method='POST' id="keep" action='/usergen'>
+<div id="formselect">
+<form method='POST' id="data" action='/usergen'>
     {{ csrf_field() }}
     <input type = "checkbox" name ="makeavatar"> include custom avatar?
     <input type = "checkbox" name ="profile"> include profile?
     <input type='text' name='users'>
     <input type='submit' value='Submit'>
 </form>
+</div>
  
  	
        
@@ -41,22 +43,26 @@
         <h2> Here are your users: </h2>
         <?php $i=0; ?>
         <?php foreach ($userstring as $user) {
+
                 echo '<p>';
-                echo 'name: '.$user->firstname.' '.$user->lastname.' <br>';
-                echo 'address: '.$user->address.' <br>';
-                echo 'phone: '.$user->phone.'<br>';
-                echo 'email: '.$user->email.'<br>';
-                echo 'password: '.htmlentities($user->password).'<br>';
+                echo 'NAME: '.$user->firstname.' '.$user->lastname.' <br>';
+                echo 'ADDR: '.$user->address.' <br>';
+                echo 'PHONE: '.$user->phone.'<br>';
+                echo 'EMAIL: '.$user->email.'<br>';
+                echo 'PWORD: '.htmlentities($user->password).'<br>';
                 if ($user->profiletext != '') {
-                echo 'profile: '.$user->profiletext.'<br>'; 
-                }
-               
-                if ($javatar[$i] != '') { ?>
-                <img src="<?php echo $javatar[$i]?>">
+                echo 'PROFILE: '.$user->profiletext.'<br>'; 
+                } ?>
+                <span id = "image">
+
+                <?php if ($javatar[$i] != '') { echo 'AVATAR: '; ?>
+                  </span>  
+                <img id="avatar" src="<?php echo $javatar[$i]?>">
                  
-        <?php echo '</php>'; $i++;} }
-        ?>
-       
+        <?php } $i++; echo '</p>'; }?>
+
+
+        
 
        
         
@@ -64,7 +70,7 @@
 
         <article id="right">
         <h2> Here are your users in JSON format: </h2>
-        <!--<textarea> {!! $usergens!!} </textarea>-->
+        
         <textarea> {{$usergens}} </textarea>
         </article>
         

@@ -8,7 +8,8 @@
 @section('content')
  
   <h2 class="pageheading"> Lorem Ipsum Generator </h2>
-<h3>how many paragraphs pf lorem ipsum?</h3>
+<h3>Language and # of Paragraphs you want outputted?</h3>
+<div id="formselect">
 <form method='POST' id="keep" action='/lorem'>
     {{ csrf_field()}}
     <input type="radio" name="languageselector" value="standard"> latin
@@ -18,6 +19,7 @@
     <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
     <input type='submit' value='Submit'>
 </form>
+</div>
  
                 <div id="lorem">
      

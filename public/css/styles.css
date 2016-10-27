@@ -8,31 +8,61 @@ html {
 
 article.lorem p {
 	
-  
+ 
 
 }
-ul {
+li.about {
+	margin-bottom: 1.5em;
+	margin-top: 1em;
+}
+ul.about {
 	margin-left: 1em;
+	text-transform: uppercase;
+	margin-bottom: 2em;
+	margin-top: 2em;
+	 
 }
-form {
-	margin-left: 2.5em;
+li.about a {
+	background: black;
+	border-radius: 5px;
+	font-size: 1.1em;
+	font-weight: bolder;
+	color: white;
+	padding: .5em;
 }
-input[type='radio'] {
+li.about a:hover {
+	background: silver;
+	color: black;
+}
+}
+
+input[type='radio']::nth-of-type(1) {
 	display: inline-block;
+	margin-left: 4em;
 }
 input[type='text'] {
-	width: 3em;
-	padding: .3em;
+	width: 2em;
+	padding: .7em;
+	margin-left: 2em;
+	border-radius: 10px;
+
+}
+input[type='submit'] {
+	border-radius: 10px;
+}
+div#formselect {
+	margin-left: 4em;
 }
 div {
 width: 100%;
 }
 div article h2 {
 	text-transform: uppercase;
-	background: pink;
-	 
-	 
-	 
+	background: silver;
+	 text-indent: 25px;
+ 
+	 width: 100%;
+
 }
 .clearfix {
 	clear:both;
@@ -40,44 +70,63 @@ div article h2 {
 h3 {
 	margin-left: 2em;
 	padding-left: .25em;
-	border: 1px solid black;
+	 
+	margin-bottom: .5em;
+	margin-top: .3em;
+	 
 }
-
+form {
+	margin-bottom: .5em;
+}
 h2.pageheading {
 	border: 1px solid green;
 	width: 20em;
-	margin-top: 2.25em;
+	margin-top: 1.5em;
 	margin-left: 1.5em;
 	padding: .25em;
 	border-radius: 10px;
+	margin-bottom: .2em;
 }
 #left, #right {
-	background: beige;
+	background: #fefbf7;
+	border-radius: 10px;
+}
+#usergen #left p {
+	border: 1px solid black;
+	margin-bottom: .5em;
+	padding: 1em 0 1em 1em;
+	font-weight:bold;
+	line-height: 1.5em;
 }
 #left {
 	font-size: .8em;
 	width: 40%;
 	float:left;
 	bottom: 0;
-	margin-left: 5%;
+	margin-left: 4%;
+	margin-right: 1%;
 	padding-bottom: 5em;
-	border-right: 1px solid black;
-	padding-right: 5%;
-	border: 1px solid red;
+	border: 1px solid black;
+	padding-right: 1em;
+	 padding-left: 1em;
 	text-indent: 1.5em;
 	height: 100em;
 	 
 }
 #right {
+	border: 1px solid black;
 	text-indent: 1.5em;
 	 font-size: .8em;
 	width: 40%;
 	height: 100em;
 	float: right;
 	 bottom: 0;
-	 margin-right: 5%;
+	 margin-right: 4%;
+	 margin-left: 0;
 	 padding-bottom: 5em;
-	 border: 1px solid red;
+	 position: relative;
+	 padding-left: 1em;
+	 padding-right: 1em;
 }
 #usergen #left, #usergen #right {
 	text-indent: 0;
@@ -88,18 +137,30 @@ header, nav {
 	
 }
 header {
-	background: aqua;
+	background: silver;
 	padding: .5em .25em .5em 0;
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 1;
+}
+img#avatar {
+	margin-left: .3em;
+	 
+	display: inline-block;
+	margin-bottom: -1.5em;
+
+	padding-top: .25em;
+	padding-bottom: .5em;
 }
 h1 {
 	margin: 0;
 	padding: 0;
 	float: left;
 	margin-left: 1.75em;
-	background: #d8b2d8;
+	background: black;
+	color: white;
+	font-weight: bolder;
 	border: 1px solid black;
 	border-radius: 10px;
 	padding: .25em;
@@ -112,18 +173,34 @@ nav a {
 	margin-right: 5%;
 	text-transform: uppercase;
 	border: 1px solid black;
-	background: orange;
+	background: brown;
 	padding: .5em;
 	text-decoration: none;
 	border-radius: 10px;
-	color: black;
+	color: white;
+	font-size: 1.1em;
 	font-weight: bolder;
+
+
 }
 a:hover {
 	background: aqua;
+	color: black;
+	font-style: italic;
+	font-weight: bolder;
 }
 h1, h3 {
 	text-transform: uppercase;
+}
+div h4  {
+	font-size: 1em;
+}
+h5{
+ display: inline;	
+ font-size: 1em; 
+}
+h5 + p {
+	display: inline;
 }
 
 footer p {
@@ -139,17 +216,24 @@ footer p {
  	width: 20%;
  }
 
-  
-textarea {
-	 box-sizing:border-box;
 
-	 width: 100%;
+textarea {
+	 background: #fefbf7;
+	width: 96%;
 	 height: 100%;
-	 bottom: 0;
+	 margin: 0 auto;
+	 
+	 padding: .25em;
+	 display: block;
+	 
+	border: none;
+	 
+	 
 	 
 }
 body {
-	background: #fefefb;
+	background: #fdfdf8;
+
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -159,11 +243,18 @@ body {
 	margin: 0;
 	padding: 0;
 }
+div#about {
+	width: 85%;
+	margin: 0 2em 0 2em;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 1em;
+}
 footer {
 	position: fixed;
 	bottom: 0;
 	width:100%;
-	background: aqua;
+	background: silver;
 	 
 	height: 2em;
 
@@ -175,6 +266,7 @@ main {
 
 .error, .inform {
 	margin-left: 2em;
+
 }
 .error {
 	background: orange;
@@ -198,6 +290,7 @@ main {
 	border-radius: 5px;
 	font-size: 1.3em;
 	width: 45%;
+	margin-top: 2em;
 }
 #left p, #right p {
 	margin: 0;
