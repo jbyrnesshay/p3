@@ -19,7 +19,7 @@
     <input type='submit' value='Submit'>
 </form>
  
-                <div>
+                <div id="lorem">
      
 
        @if(count($errors) > 0)

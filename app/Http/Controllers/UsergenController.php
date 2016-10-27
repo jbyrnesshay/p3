@@ -35,11 +35,12 @@ class UsergenController extends Controller
         $array1 = ["My name is ", "I'm ", "They call me ", "Hi I'm ", "Hello my name's ", "My name's "];
         $array2 = [".  I like  ", '.  My favorite thing is  ', '.  I love ', '.  I really enjoy  ', ".  Some people say i'm boring but i get really excited about  ", ".  All my time is wrapped up in  "];
         $array3 = ["cats!  ", 'dogs.  ', 'cars.  ', 'airplanes.  ', 'music.  ', 'travelling.  ', 'bicycling!  ', 'driving my car!  ', 'combing the hair on animals!  ', 'dining out.  ', 'singing in the shower.  ', 'Achatina fulica, the Giant African land snail!  '];
-        $filler = "  Blah blah blah blah.";
+        $filler = "  Blah blah blah.";
         $emailprovider = [ '@example.com', '@reallyfake.net', '@notactual.com', '@wakeup.com', '@falsemail.net', '@pretendmail.com', '@trickmail.com', '@unreal.net'];
         $profiler = false;
         $profileText ='';
         $profiler = $request->input('profile');
+        $selectavatar = $request->input('makeavatar');
 
      for ($i=0; $i < $howManyUsers; $i++) {
      	$firstname[$i] = $faker->firstName;
@@ -53,11 +54,12 @@ class UsergenController extends Controller
         $string2 = $string.$lastname[$i];
         $randomnumber= $random->getRandomInteger(0, 7);
         $email[$i] = strtolower($string2).$emailprovider[$randomnumber];
-        $initials[$i] = $firstname[$i][0].$lastname[$i][0];
-  
+        $havatar[$i]='';
+        $javatar[$i]='';
+        if ($selectavatar) {
         $havatar[$i] = \Avatar::create($name[$i])->toBase64();
         $javatar[$i] = $havatar[$i];
-         
+        } 
         $profileText[$i]='';
         if ($profiler) {
             
@@ -68,7 +70,7 @@ class UsergenController extends Controller
         }
         
         $userArray[$i] = ['firstname'=>$firstname[$i], 'lastname'=>$lastname[$i], 'password'=>$password[$i], 
-        'address'=>$address[$i], 'phone'=>$phone[$i], 'email'=>$email[$i], 'initials'=>$initials[$i], 'profiletext' =>$profileText[$i], 'havatar'=>$havatar[$i]  ];
+        'address'=>$address[$i], 'phone'=>$phone[$i], 'email'=>$email[$i], 'profiletext' =>$profileText[$i], 'havatar'=>$havatar[$i]  ];
      }
    
 

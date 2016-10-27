@@ -31,12 +31,12 @@ div article h2 {
 	text-transform: uppercase;
 	background: pink;
 	 
-	width: 100%;
+	 
 	 
 }
 .clearfix {
 	clear:both;
-}
+} 
 h3 {
 	margin-left: 2em;
 	padding-left: .25em;
@@ -65,6 +65,7 @@ h2.pageheading {
 	padding-right: 5%;
 	border: 1px solid red;
 	text-indent: 1.5em;
+	height: 100em;
 	 
 }
 #right {
@@ -77,6 +78,9 @@ h2.pageheading {
 	 margin-right: 5%;
 	 padding-bottom: 5em;
 	 border: 1px solid red;
+}
+#usergen #left, #usergen #right {
+	text-indent: 0;
 }
 header, nav {
 	margin: 0;
@@ -194,4 +198,8 @@ main {
 	border-radius: 5px;
 	font-size: 1.3em;
 	width: 45%;
+}
+#left p, #right p {
+	margin: 0;
+	padding: 0;
 }
