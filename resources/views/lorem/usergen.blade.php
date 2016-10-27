@@ -8,25 +8,27 @@
 @section('title', 'Developers Best Friend')
 
 @section('content')
+<h2 class="pageheading"> Fake User Generator </h2>
      
-how many users to generate?
+<h3>how many users to generate?</h3>
 <form method='POST' id="keep" action='/usergen'>
     {{ csrf_field() }}
     <input type = "checkbox" name ="icon"> include icon?
     <input type = "checkbox" name ="profile"> include profile?
     <input type='text' name='users'>
-    <input type='submit' value='Submit'>
+    <input type='submit' value='Submit'>n
 </form>
  
  	
-       <h1> Fake User Generator </h1>
-      
+       
+      <div>
        @if(count($errors) > 0)
-        <ul>
+        <p class = "inform"> error found. see requirements below </p>
         @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+            <p class="error">{{ $error }}</p>
+            
         @endforeach
-        </ul>
+        
        @endif
        
  
@@ -54,7 +56,7 @@ how many users to generate?
                 </p>
         <?php  $i++;}
         ?>
-        
+       
 
        
         
@@ -67,5 +69,6 @@ how many users to generate?
         </article>
         
        @endif
+        </div>
 
 @stop

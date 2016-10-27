@@ -6,27 +6,29 @@
 @section('title', 'Developers Best Friend')
 
 @section('content')
-
-how many paragraphs pf lorem ipsum?
+ 
+  <h2 class="pageheading"> Lorem Ipsum Generator </h2>
+<h3>how many paragraphs pf lorem ipsum?</h3>
 <form method='POST' id="keep" action='/lorem'>
     {{ csrf_field()}}
     <input type="radio" name="languageselector" value="standard"> latin
 
-    <input type="radio" name="languageselector" value="customEng"> english <br>
+    <input type="radio" name="languageselector" value="customEng"> english  
 
     <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
     <input type='submit' value='Submit'>
 </form>
-
+ 
                 <div>
-       <h1> Lorem Ipsum Generator </h1>
+     
 
        @if(count($errors) > 0)
-        <ul>
+        <p class = "inform"> error found. see requirements below </p>
         @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
+            <p class="error">{{ $error }}</p>
+            
         @endforeach
-        </ul>
+        
         @endif
        @if (isset($contents))
         <article id="left" class="lorem">
@@ -37,7 +39,7 @@ how many paragraphs pf lorem ipsum?
         </article>
 
         <article id="right" class="lorem">
-        <h2> Here is your Lorem Ipsul text with Paragraph tags: </h2>
+        <h2> Here is the text with paragraph tags: </h2>
         @foreach($contentsarray as $paragraph)
             {{"<p>"}} {{$paragraph}} {{"</p>"}}<p></p>
 

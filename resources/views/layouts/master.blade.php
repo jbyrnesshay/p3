@@ -20,15 +20,12 @@
 	<body>
 
 	<header>
+		<h1> Developer's Best Friend </h1>
+		<nav>
+			<a href="{{route('welcome') }}">home</a>  
+		</nav>
 	</header>
-	<nav>
-	<ul>
-	<li>
-	<a href="{{route('welcome') }}">home</a> </li>
-	<li></li>
-	</ul>
-
-	</nav>
+	
 	 
 	<section>
 	@yield ('content')
