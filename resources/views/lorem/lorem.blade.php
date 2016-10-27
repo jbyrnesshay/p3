@@ -21,38 +21,27 @@
 </form>
 </div>
  
-                <div id="lorem">
-     
-
-       @if(count($errors) > 0)
-        <p class = "inform"> error found. see requirements below </p>
-        @foreach ($errors->all() as $error)
-            <p class="error">{{ $error }}</p>
-            
-        @endforeach
-        
-        @endif
-       @if (isset($contents))
-        <article id="left" class="lorem">
-        <h2> Here is your Lorem Ipsum text: </h2>
-          {!! $contents !!}
-
-
-        </article>
-
-        <article id="right" class="lorem">
+<div id="lorem">
+  @if(count($errors) > 0)
+    <p class = "inform"> error found. see requirements below </p>
+    @foreach ($errors->all() as $error)
+      <p class="error">{{ $error }}</p>
+    @endforeach
+  @endif
+  @if (isset($contents))
+    <article id="left" class="lorem">
+    <h2> Here is your Lorem Ipsum text: </h2>
+    {!! $contents !!}
+    </article>
+    <article id="right" class="lorem">
         <h2> Here is the text with paragraph tags: </h2>
         @foreach($contentsarray as $paragraph)
-            {{"<p>"}} {{$paragraph}} {{"</p>"}}<p></p>
-
+            {{"<p>"}} {{$paragraph}} {{"</p>"}}
         @endforeach
+    </article>
 
+  @endif
+</div>
 
-
-        </article>
-        </div>
-        <br class="clearfix">
-
-       @endif
-
-@stop
+<br class="clearfix">
+@endsection
