@@ -16,7 +16,7 @@
     <input type = "checkbox" name ="icon"> include icon?
     <input type = "checkbox" name ="profile"> include profile?
     <input type='text' name='users'>
-    <input type='submit' value='Submit'>n
+    <input type='submit' value='Submit'>
 </form>
  
  	

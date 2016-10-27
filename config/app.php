@@ -179,6 +179,7 @@ return [
         P3\Providers\RouteServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         
 
         
@@ -230,7 +231,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Avatar'    => Laravolt\Avatar\Facade::class,
-         
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         
 
     ],

@@ -49,6 +49,7 @@
 
         </article>
         </div>
+        <br class="clearfix">
 
        @endif
 

@@ -1,6 +1,9 @@
+* box sizing */
 html {
 	box-sizing: border-box;
-
+	}
+*, *:before, *:after {
+	box-sizing: inherit;
 }
 
 article.lorem p {
@@ -30,6 +33,9 @@ div article h2 {
 	 
 	width: 100%;
 	 
+}
+.clearfix {
+	clear:both;
 }
 h3 {
 	margin-left: 2em;
@@ -75,7 +81,7 @@ h2.pageheading {
 header, nav {
 	margin: 0;
 	padding: 0;
-	overflow: auto;
+	
 }
 header {
 	background: aqua;
@@ -161,9 +167,7 @@ footer {
 main {
 	 
 }
-div {
-	height: 100%;
-}
+ 
 
 .error, .inform {
 	margin-left: 2em;

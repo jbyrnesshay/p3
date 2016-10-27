@@ -12,7 +12,8 @@
         "joshtronic/php-loremipsum": "dev-master",
         "nubs/random-name-generator": "^2.0",
         "rych/random": "^0.1.0",
-        "laravolt/avatar": "^1.8"
+        "laravolt/avatar": "^1.8",
+        "barryvdh/laravel-debugbar": "^2.3"
      },
     
     "require-dev": {
