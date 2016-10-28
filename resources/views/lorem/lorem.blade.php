@@ -12,10 +12,10 @@
 <div id="formselect">
     <form method='POST' id="keep" action='/lorem'>
         {{ csrf_field()}}
-        <input type="radio" name="languageselector" value="standard"> 
-        <label for="standard">latin</label>
-        <input type="radio" name="languageselector" value="customEng"> 
-        <label for="customEng">english</label>  
+        <input type="radio" name="languageselector" id="latin" value="standard"> 
+        <label for="latin">latin</label>
+        <input type="radio" name="languageselector" id="english" value="customEng"> 
+        <label for="english">english</label>  
         <!-- keep old text input (numeric) value if does not pass server side validation -->
         <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
         <input type='submit' value='Submit'>

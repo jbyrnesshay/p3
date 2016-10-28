@@ -13,10 +13,10 @@
 <div id="formselect">
         <form method='POST' id="data" action='/usergen'>
                 {{ csrf_field() }}
-                <input type = "checkbox" name ="makeavatar">  
-                <label for="makeavatar">include custom avatar?</label>  
-                <input type = "checkbox" name ="profile">  
-                 <label for="profile">include profile?</label>  
+                <input type = "checkbox" id="avat" name ="makeavatar">  
+                <label for="avat">include custom avatar?</label>  
+                <input type = "checkbox" id="prof" name ="profile">  
+                 <label for="prof">include profile?</label>  
                 <input type='text' name='users'>
                 <input type='submit' value='Submit'>
         </form>
@@ -36,7 +36,8 @@
                 <?php $userstring = json_decode($usergens); ?>
                 <h2> Here are your users: </h2>
                 
-                <?php $i=0; ?>
+                <!-- prepare php counter for looping through avatars if needed -->
+                <?php $i=0; ?>  
                 <?php foreach ($userstring as $user) {
                         echo '<p>';
                         echo 'NAME: '.$user->firstname.' '.$user->lastname.' <br>';
@@ -49,29 +50,20 @@
                         if ($user->profiletext != '') {
                             echo 'PROFILE: '.$user->profiletext.'<br>'; 
                         } ?>
-                        <!-- span for styling of the AVATAR label to position pleasingly opposed to the avatar -->
                         
-                        <!-- if avatar exists in the users array of data, display it -->                       
-                        <?php if ($javatar[$i] != '') { echo '<span id="image">'.'AVATAR: '; ?>
-                            </span>  
+                        <!-- if avatar exists in the users array of data, display it -->
+                        <!-- span for styling of the AVATAR label to position pleasingly opposed to the avatar image-->
+                        <?php if ($javatar[$i] != '') { echo '<span id="image">'.'AVATAR: '.'</span>'; ?>
+                            <!--$javatar was passed in addition to the $usergens array -->
                             <img id="avatar" src="<?php echo $javatar[$i]?>">
                             <?php } $i++; echo '</p>'; 
                         }?>
+                </article>
+                <article id="right">
+                        <h2> Here are your users in JSON format: </h2>
+                        <textarea> {{$usergens}} </textarea>
+                </article>
+        @endif
+</div>
 
-
-        
-
-       
-        
-        </article>
-
-        <article id="right">
-        <h2> Here are your users in JSON format: </h2>
-        
-        <textarea> {{$usergens}} </textarea>
-        </article>
-        
-       @endif
-        </div>
-
-@stop
+@endsection

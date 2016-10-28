@@ -11,7 +11,7 @@
     <h3>This app provides two functions</h3>
     <ul class = "about">
       	<li class ="about"><a href="{{ route('lorem') }}">a Lorem Ipsum Generator</a></li>
-        <li class ="about"><a href="{{ route('usergen')}}">a Random User Generator</a></li>
+        <li class ="about"><a href="{{ route('usergen')}}">a Fake User Generator</a></li>
     </ul>
     <div id="about">
         <h4> About the project: </h4>
