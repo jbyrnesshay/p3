@@ -3,7 +3,7 @@
 	<head>
     	<title>
         {{-- Yield the title if it exist, otherwise default to 'Developers Best Friend'--}}
-        @yield('title', 'Developers Best Friend')
+        @yield('title', 'Developers Best Friend, by Joachim Byrnes-Shay')
     	</title>
 		<meta charset='utf-8'>
     	<link href="/css/styles.css" type='text/css' rel='stylesheet'>

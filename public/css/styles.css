@@ -1,4 +1,4 @@
-* box sizing */
+ 
 html {
 	box-sizing: border-box;
 }
@@ -106,7 +106,7 @@ li.about {
 	list-style-type: none;
 	margin-bottom: 1em;
 }
-li:about a:nth-of-type(1) {
+li.about a:nth-of-type(1) {
 	margin-right: 2em;
 }
 li.about a {
@@ -170,12 +170,11 @@ label {
 	background: #e5e5e5;
 	border-radius: 5px;
 	border: 3px solid silver;
-	padding: .25em;
-	
+	padding: 0 .25em .25em .25em;
 	margin: 1em 0 0 0;
 	height: 1em;
 }
-input[type='radio']::nth-of-type(1) {
+input[type='radio']:nth-of-type(1) {
 	display: inline-block;
 	margin-left: 4em;
 }
@@ -193,6 +192,7 @@ input[type='submit'] {
 	border-radius: 10px;
 	margin-top: 0;
 	margin-bottom: .5em;
+	margin-right: .25em;
 }
 div#formselect {
 	margin-left: 4em;
