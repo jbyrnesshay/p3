@@ -8,7 +8,7 @@
 @section('content')
  
 <h2 class="pageheading"> Lorem Ipsum Generator </h2>
-<h3>Language and how many paragraphs you want outputted?</h3>
+<h3>Language and how many paragraphs you want outputted? (1 to 50)</h3>
 <div id="formselect">
     <form method='POST' id="keep" action='/lorem'>
         {{ csrf_field()}}

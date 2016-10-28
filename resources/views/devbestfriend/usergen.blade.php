@@ -9,7 +9,7 @@
 
 @section('content')
 <h2 class="pageheading"> Fake User Generator </h2>
-<h3>how many users to generate?</h3>
+<h3>how many users to generate? (1 to 50)</h3>
 <div id="formselect">
         <form method='POST' id="data" action='/usergen'>
                 {{ csrf_field() }}
@@ -34,7 +34,7 @@
                 <article id="left">
                 <!-- decode the $usergens array to make it easy to make a nice display -->
                 <?php $userstring = json_decode($usergens); ?>
-                <h2> Here are your users: </h2>
+                <h2> Here is a nice display of your user: </h2>
                 
                 <!-- prepare php counter for looping through avatars if needed -->
                 <?php $i=0; ?>  
