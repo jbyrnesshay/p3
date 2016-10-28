@@ -7,6 +7,7 @@
         use Rych\Random\Random;
         use P3\Http\Requests;
         use App;
+        use P3;
 
         /*a class for obtaining 500 random words from external wordlist file (wordsEn.txt) of more than 100,000 words
          for usage as custom dictionary with Badcow */
