@@ -5,6 +5,7 @@
         
         use Illuminate\Http\Request;
         use Rych\Random\Random;
+        use P3\Http\Requests;
         use App;
 
         /*a class for obtaining 500 random words from external wordlist file (wordsEn.txt) of more than 100,000 words
