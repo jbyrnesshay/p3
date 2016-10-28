@@ -17,7 +17,7 @@
                         $random = new \Rych\Random\Random();
 
                         #load custom dictionary file from storage
-                        $loadedfile = \File::get(storage_path('wordsEn.txt'));
+                        $loadedfile = \File::get(storage_path('dictionary\wordsEn.txt'));
 
                         #make a clean array of the contents, file consists of one word per line
                         $filearray = explode("\r\n", $loadedfile);
