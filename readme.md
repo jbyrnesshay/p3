@@ -1,4 +1,7 @@
- #P3: Developers Best Friend, Joachim Byrnes-Shay
+
+# P3: Developers Best Friend 
+# author: Joachim Byrnes-Shay
+# project 3 for Digital Web Applications
 # 10/26/2016
 
 ## Live URL
@@ -25,7 +28,7 @@ The english language word file of 109502 words, wordsEn.txt, is credited to www-
 Other than the external packages referenced as Outside code below, all programming and styling by myself, Joachim Byrnes-Shay.
 
 ## Screencast Demo
-to be inserted
+http://screencast.com/t/AGDG5YVP8
 
 ## Usage Details 
 1.  Lorem Ipsum.
