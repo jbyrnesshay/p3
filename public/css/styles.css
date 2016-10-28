@@ -271,15 +271,13 @@ h3 {
 	margin-left: 4%;
 	margin-right: 1%;
 	padding-bottom: 5em;
-	border: 1px solid black;
 	padding-right: 1em;
 	padding-left: 1em;
-	text-indent: 1.5em;
+	text-indent: 5em;
 	height: 100em;
 }
 #right {
-	border: 1px solid black;
-	text-indent: 1.5em;
+	 
 	font-size: .8em;
 	width: 40%;
 	height: 100em;

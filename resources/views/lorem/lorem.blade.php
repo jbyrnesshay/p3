@@ -42,6 +42,7 @@
             <!-- get array of paragraphs and display each one surrounded by paragraph tags -->
             @foreach($contentsaddtags as $paragraph)
                 {{"<p>"}} {{$paragraph}} {{"</p>"}}
+                <br><br>
             @endforeach
         </article>
     @endif

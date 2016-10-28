@@ -38,6 +38,7 @@
                 
                 <!-- prepare php counter for looping through avatars if needed -->
                 <?php $i=0; ?>  
+                <!-- the display user process was tripping me up in its complexity, so i switched to standard php syntax here -->
                 <?php foreach ($userstring as $user) {
                         echo '<p>';
                         echo 'NAME: '.$user->firstname.' '.$user->lastname.' <br>';
@@ -50,7 +51,6 @@
                         if ($user->profiletext != '') {
                             echo 'PROFILE: '.$user->profiletext.'<br>'; 
                         } ?>
-                        
                         <!-- if avatar exists in the users array of data, display it -->
                         <!-- span for styling of the AVATAR label to position pleasingly opposed to the avatar image-->
                         <?php if ($javatar[$i] != '') { echo '<span id="image">'.'AVATAR: '.'</span>'; ?>
@@ -61,6 +61,7 @@
                 </article>
                 <article id="right">
                         <h2> Here are your users in JSON format: </h2>
+                        <!-- $usergens was json encoded in the controller, so just display it -->
                         <textarea> {{$usergens}} </textarea>
                 </article>
         @endif

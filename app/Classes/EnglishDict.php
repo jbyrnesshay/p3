@@ -2,41 +2,35 @@
  
 
      namespace P3\classes;
-        use App;
-        use P3;
+        
         use Illuminate\Http\Request;
         use Rych\Random\Random;
 
-use P3\Http\Requests;
 
+        /*a class for obtaining 500 random words from external wordlist file (wordsEn.txt) of more than 100,000 words
+         for usage as custom dictionary with Badcow */
 
         class EnglishDict {
-                # public $random = new Rych\Random\Random();
-                public $dictionary;
-                public $dictato;
-                //public function englishdict() {
+
                 public function __construct() {
+                        #new Rynch\random object instance
                         $random = new \Rych\Random\Random();
 
-                  $dicto = \File::get(storage_path('dictionary\wordsEn.txt'));
+                        #load custom dictionary file from storage
+                        $loadedfile = \File::get(storage_path('dictionary\wordsEn.txt'));
 
-                $dictior = explode("\r\n", $dicto);
-                $dictiot = array_map('trim', $dictior);
-                 $size = count($dictiot);
+                        #make a clean array of the contents, file consists of one word per line
+                        $filearray = explode("\r\n", $loadedfile);
+                        #just making sure
+                        $cleanarray = array_map('trim', $filearray);
+                    
+                        $size = count($cleanarray) - 1;
 
-                for ($i=0; $i < 500; $i++) {
-                 $randomnumber= $random->getRandomInteger(1, $size);
-                 
-                $dictato[$i] = $dictiot[$randomnumber];
+                        #get 500 random words by index from wordsEn.txt using Rynch random
+                        for ($i=0; $i < 500; $i++) {
+                                $randomnumber= $random->getRandomInteger(1, $size);
+                                $dictionaryEng[$i] = $cleanarray[$randomnumber];
+                        }
+                        $this->dictionary = $dictionaryEng;
                 }
-               
-                $this->dictionary = $dictato;
-                
-
-
-
-
-}
-
-
-}
+        }
