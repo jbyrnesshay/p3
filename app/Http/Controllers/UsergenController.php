@@ -82,6 +82,6 @@ class UsergenController extends Controller
             #json encode, as the developer version of the content will be a json object displayed to screen
             $usergens = json_encode($userArray);
             #send the user array and avatar array (as javatar) to view, had some problems the data without sending avatars as their own array
-            return view('lorem.usergen')->with('usergens', $usergens)->with('javatar', $javatar);
+            return view('devbestfriend.usergen')->with('usergens', $usergens)->with('javatar', $javatar);
     }
 }

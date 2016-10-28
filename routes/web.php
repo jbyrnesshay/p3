@@ -19,12 +19,12 @@ Route::get('/', function () {
 
 # route for user generate page */
 Route::get('/usergen', function() {
-    return view('/lorem/usergen');
+    return view('/devbestfriend/usergen');
 })->name('usergen');
 
 # route for create lorem ipsum page 
 Route::get('/lorem', function() {
-    return view('/lorem/lorem'); 
+    return view('/devbestfriend/lorem'); 
 })->name('lorem');
 
 # process lorem ipsum

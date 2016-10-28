@@ -56,6 +56,6 @@ class LoremController extends Controller
             $contents = $splitparagraphs;
         
             #return both of them to view
-            return view('lorem.lorem')->with('contents', $contents)->with('contentsaddtags', $contentsaddtags);
+            return view('devbestfriend.lorem')->with('contents', $contents)->with('contentsaddtags', $contentsaddtags);
     }
 }
