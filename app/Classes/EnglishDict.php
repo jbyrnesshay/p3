@@ -6,8 +6,7 @@
         use Illuminate\Http\Request;
         use Rych\Random\Random;
         use P3\Http\Requests;
-        use App;
-        use P3;
+        
 
         /*a class for obtaining 500 random words from external wordlist file (wordsEn.txt) of more than 100,000 words
          for usage as custom dictionary with Badcow */
@@ -19,7 +18,7 @@
                         $random = new \Rych\Random\Random();
 
                         #load custom dictionary file from storage
-                        $loadedfile = \File::get(storage_path('dictionary\wordsEn.txt'));
+                        $loadedfile = \File::get(storage_path('wordsEn.txt'));
 
                         #make a clean array of the contents, file consists of one word per line
                         $filearray = explode("\r\n", $loadedfile);
