@@ -1,4 +1,4 @@
-   @extends('layouts.master')
+@extends('layouts.master')
 
 @section('head')
 @endsection
@@ -7,41 +7,45 @@
 
 @section('content')
  
-  <h2 class="pageheading"> Lorem Ipsum Generator </h2>
-<h3>Language and # of Paragraphs you want outputted?</h3>
+<h2 class="pageheading"> Lorem Ipsum Generator </h2>
+<h3>Language and how many paragraphs you want outputted?</h3>
 <div id="formselect">
-<form method='POST' id="keep" action='/lorem'>
-    {{ csrf_field()}}
-    <input type="radio" name="languageselector" value="standard"> latin
-
-    <input type="radio" name="languageselector" value="customEng"> english  
-
-    <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
-    <input type='submit' value='Submit'>
-</form>
+    <form method='POST' id="keep" action='/lorem'>
+        {{ csrf_field()}}
+        <input type="radio" name="languageselector" value="standard"> 
+        <label for="standard">latin</label>
+        <input type="radio" name="languageselector" value="customEng"> 
+        <label for="customEng">english</label>  
+        <!-- keep old text input (numeric) value if does not pass server side validation -->
+        <input type='text' name='paragraphs' value='{{old("paragraphs")}}'>
+        <input type='submit' value='Submit'>
+    </form>
 </div>
- 
 <div id="lorem">
-  @if(count($errors) > 0)
-    <p class = "inform"> error found. see requirements below </p>
-    @foreach ($errors->all() as $error)
-      <p class="error">{{ $error }}</p>
-    @endforeach
-  @endif
-  @if (isset($contents))
-    <article id="left" class="lorem">
-    <h2> Here is your Lorem Ipsum text: </h2>
-    {!! $contents !!}
-    </article>
-    <article id="right" class="lorem">
-        <h2> Here is the text with paragraph tags: </h2>
-        @foreach($contentsarray as $paragraph)
-            {{"<p>"}} {{$paragraph}} {{"</p>"}}
+    <!-- if there are errors in server side validation, process this block which displays errors to the page-->
+    @if(count($errors) > 0)
+        <p class = "inform"> error found. see requirements below </p>
+        @foreach ($errors->all() as $error)
+            <p class="error">{{ $error }}</p>
         @endforeach
-    </article>
-
-  @endif
+    @endif
+    <!-- if we get to this block, display lorem text to screen -->
+    <!-- isset to ensure block is not entered until the data exists from controller -->
+    @if (isset($contents) && isset($contentsaddtags))
+        <article id="left" class="lorem">
+            <h2> Here is your Lorem Ipsum text: </h2>
+            <!-- display text only, no paragraph tags -->
+            {!! $contents !!}
+        </article>
+        <article id="right" class="lorem">
+            <h2> Here is the text with paragraph tags: </h2>
+            <!-- get array of paragraphs and display each one surrounded by paragraph tags -->
+            @foreach($contentsaddtags as $paragraph)
+                {{"<p>"}} {{$paragraph}} {{"</p>"}}
+            @endforeach
+        </article>
+    @endif
 </div>
-
 <br class="clearfix">
+
 @endsection

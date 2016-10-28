@@ -14,7 +14,11 @@
 		<header>
 			<h1> Developer's Best Friend </h1>
 				<nav>
-					<a href="{{route('welcome') }}">home</a>  
+				<ul>
+					<li><a href="{{route('welcome') }}">home</a></li>  
+					<li><a href="{{route('lorem') }}">lorem</a></li>
+					<li><a href="{{route('usergen') }}">users</a></li>
+				</ul>
 				</nav>
 		</header>
 		<br class="clearfix">
@@ -22,8 +26,7 @@
 			@yield ('content')
 		</section>
 		<footer>
-			<p>&copy; {{ date('Y')}}</p>
-			<p> contact</p>
+			<p>&copy; {{ date('Y')}} Joachim Byrnes-Shay</p>
 		</footer>
 	</body>
 </html>

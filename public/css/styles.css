@@ -1,102 +1,267 @@
 * box sizing */
 html {
 	box-sizing: border-box;
-	}
+}
 *, *:before, *:after {
 	box-sizing: inherit;
 }
 
-article.lorem p {
-	
- 
+body {
+	background: #fdfdf8;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+}
+a:hover {
+	background: aqua;
+	color: black;
+	font-style: italic;
+	font-weight: bolder;
+}
+.clearfix {
+	clear:both;
+} 
 
+
+
+
+/*begin styling of header and header navigation */
+header {
+	background: silver;
+	padding: .5em .25em .5em 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 }
-li.about {
-	margin-bottom: 1.5em;
-	margin-top: 1em;
+h1 {
+	margin: 0;
+	padding: 0;
+	float: left;
+	margin-left: 1.75em;
+	background: black;
+	color: white;
+	font-weight: bolder;
+	text-transform: uppercase;
+	border-radius: 10px;
+	padding: .25em;
+	font-size: 1.3em;
 }
+nav ul {
+	margin-top: .5em;
+	margin-bottom: .5em;
+	position: absolute;
+	right: 5em;
+}
+nav li {
+	display: inline-block;
+}
+nav a {
+	text-transform: uppercase;
+	border: 1px solid black;
+	background: brown;
+	padding: .3em;
+	text-decoration: none;
+	border-radius: 10px;
+	color: white;
+	font-size: .9em;
+	font-weight: bolder;
+}
+/*end styling of header and header navigation*/
+
+
+
+
+/*begin styling of footer */
+footer {
+	position: fixed;
+	bottom: 0;
+	width:100%;
+	background: silver;
+	height: 2em;
+	text-align: center;
+}
+footer p {
+	margin:0;
+	padding:.3em 0 0 0;
+	display:inline-block;
+}
+/*end styling of footer*/
+
+
+
+
+/*begin styling of welcome page list and welcome page main content links */
 ul.about {
 	margin-left: 1em;
 	text-transform: uppercase;
-	margin-bottom: 2em;
-	margin-top: 2em;
-	 
+	margin-top: 1em;
+}
+li.about {
+	list-style-type: none;
+	margin-bottom: 1em;
+}
+li:about a:nth-of-type(1) {
+	margin-right: 2em;
 }
 li.about a {
-	background: black;
-	border-radius: 5px;
+	background: #d9d9d9;
+	border-radius: 10px;
 	font-size: 1.1em;
 	font-weight: bolder;
-	color: white;
-	padding: .5em;
+	color: black;
+	padding: .3em;
+	border: 1px solid black;
 }
 li.about a:hover {
-	background: silver;
-	color: black;
+	background: black;
+	color: white;
 }
+li.develop {
+	font-weight: bold;
 }
+/*end styling block for welcome page list and welcome page main content links */
 
+
+
+
+/*begin styling block for welcome page main content headers and other welcome page text contents */
+div#about {
+	width: 85%;
+	background: #e5e5e5;
+	margin: 0 2em 0 2em;
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 0 .45em 0 .45em;
+}
+h4, h5 {
+	text-transform: uppercase;
+	font-size: 1em;
+}
+h5 {
+ display: inline;	
+}
+h5 + p {
+	display: inline;
+}
+/*end styling block for welcome page main content headers and other welcome page text contents */
+
+
+
+
+/* begin styling block for form and inputs */
+form {
+	margin-bottom: .5em;
+	margin-top:0;
+	background: white;
+	display: inline-block;
+	border: 4px solid silver;
+	border-radius: 10px;
+	padding: .3em 0 0 0;
+
+}
+label {
+	font-weight: bolder;
+	background: #e5e5e5;
+	border-radius: 5px;
+	border: 3px solid silver;
+	padding: .25em;
+	
+	margin: 1em 0 0 0;
+	height: 1em;
+}
 input[type='radio']::nth-of-type(1) {
 	display: inline-block;
 	margin-left: 4em;
 }
 input[type='text'] {
 	width: 2em;
-	padding: .7em;
-	margin-left: 2em;
+	height: .75em;
+ 	margin-top: .25em; 
+	padding: .5em;
+	margin-left: 1em;
 	border-radius: 10px;
-
+	border: 2px solid silver;
+	margin-bottom: .25em;
 }
 input[type='submit'] {
 	border-radius: 10px;
+	margin-top: 0;
+	margin-bottom: .5em;
 }
 div#formselect {
 	margin-left: 4em;
 }
+/*end styling for form and inputs */
+
+
+
+
+ /*begin styling of form input validation errors and message*/
+.error, .inform {
+	margin-left: 2em;
+}
+.error {
+	width: 45%;
+	background: orange;
+	color: black;
+	font-size: 1.2em;
+	font-weight: bolder;
+	text-transform: uppercase;
+	display: block;
+	padding: .5em;
+	border-radius: 10px;
+}
+.inform {
+	width: 45%;
+	background: #ff7070;
+	color: black;
+	font-size: 1.3em;
+	font-weight: bolder;
+	text-transform: uppercase;
+	display: block;
+	padding: .5em;
+	border-radius: 10px;
+	margin-top: 2em;
+}
+/*end styling of form input validation errors*/
+
+
+
+
+/*begin styling of lorem and usergen pages and output*/
 div {
-width: 100%;
+	width: 100%;
+}
+h2.pageheading {
+	width: 20em;
+	margin-top: 1.5em;
+	margin-left: 1.8em;
+	padding: .25em;
+	border-radius: 10px;
+	margin-bottom: .2em;
+	font-size: 1.2em;
 }
 div article h2 {
 	text-transform: uppercase;
 	background: silver;
-	 text-indent: 25px;
- 
-	 width: 100%;
-
+	text-indent: 25px;
+ 	width: 100%;
 }
-.clearfix {
-	clear:both;
-} 
 h3 {
 	margin-left: 2em;
 	padding-left: .25em;
-	 
 	margin-bottom: .5em;
 	margin-top: .3em;
-	 
-}
-form {
-	margin-bottom: .5em;
-}
-h2.pageheading {
-	border: 1px solid green;
-	width: 20em;
-	margin-top: 1.5em;
-	margin-left: 1.5em;
-	padding: .25em;
-	border-radius: 10px;
-	margin-bottom: .2em;
 }
 #left, #right {
 	background: #fefbf7;
 	border-radius: 10px;
-}
-#usergen #left p {
-	border: 1px solid black;
-	margin-bottom: .5em;
-	padding: 1em 0 1em 1em;
-	font-weight:bold;
-	line-height: 1.5em;
 }
 #left {
 	font-size: .8em;
@@ -108,191 +273,55 @@ h2.pageheading {
 	padding-bottom: 5em;
 	border: 1px solid black;
 	padding-right: 1em;
-	 padding-left: 1em;
+	padding-left: 1em;
 	text-indent: 1.5em;
 	height: 100em;
-	 
 }
 #right {
 	border: 1px solid black;
 	text-indent: 1.5em;
-	 font-size: .8em;
+	font-size: .8em;
 	width: 40%;
 	height: 100em;
 	float: right;
-	 bottom: 0;
-	 margin-right: 4%;
-	 margin-left: 0;
-	 padding-bottom: 5em;
-	 position: relative;
-	 padding-left: 1em;
-	 padding-right: 1em;
-}
-#usergen #left, #usergen #right {
-	text-indent: 0;
-}
-header, nav {
-	margin: 0;
-	padding: 0;
-	
-}
-header {
-	background: silver;
-	padding: .5em .25em .5em 0;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 1;
-}
-img#avatar {
-	margin-left: .3em;
-	 
-	display: inline-block;
-	margin-bottom: -1.5em;
-
-	padding-top: .25em;
-	padding-bottom: .5em;
-}
-h1 {
-	margin: 0;
-	padding: 0;
-	float: left;
-	margin-left: 1.75em;
-	background: black;
-	color: white;
-	font-weight: bolder;
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: .25em;
-	font-size: 1.3em;
-}
-nav a {
-	display: inline-block;
-	right: 0;
-	position: absolute;
-	margin-right: 5%;
-	text-transform: uppercase;
-	border: 1px solid black;
-	background: brown;
-	padding: .5em;
-	text-decoration: none;
-	border-radius: 10px;
-	color: white;
-	font-size: 1.1em;
-	font-weight: bolder;
-
-
-}
-a:hover {
-	background: aqua;
-	color: black;
-	font-style: italic;
-	font-weight: bolder;
-}
-h1, h3 {
-	text-transform: uppercase;
-}
-div h4  {
-	font-size: 1em;
-}
-h5{
- display: inline;	
- font-size: 1em; 
-}
-h5 + p {
-	display: inline;
-}
-
-footer p {
+	bottom: 0;
+	margin-right: 4%;
+	margin-left: 0;
+	padding-bottom: 5em;
 	position: relative;
-	 
-	margin:0;
-	padding:0;
-	display:inline;
-}
- footer p:nth-of-type(2) {
- 	right: 0;
- 	 position: absolute;
- 	width: 20%;
- }
-
-
-textarea {
-	 background: #fefbf7;
-	width: 96%;
-	 height: 100%;
-	 margin: 0 auto;
-	 
-	 padding: .25em;
-	 display: block;
-	 
-	border: none;
-	 
-	 
-	 
-}
-body {
-	background: #fdfdf8;
-
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	bottom: 0;
-	top: 0;
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-div#about {
-	width: 85%;
-	margin: 0 2em 0 2em;
-	border: 1px solid black;
-	border-radius: 20px;
-	padding: 1em;
-}
-footer {
-	position: fixed;
-	bottom: 0;
-	width:100%;
-	background: silver;
-	 
-	height: 2em;
-
-}
-main {
-	 
-}
- 
-
-.error, .inform {
-	margin-left: 2em;
-
-}
-.error {
-	background: orange;
-	color: black;
-	font-weight: bolder;
-	text-transform: uppercase;
-	display: block;
-	padding: .5em;
-	border-radius: 5px;
-	font-size: 1.2em;
-	width: 45%;
-
-}
-.inform {
-	background: #ff7070;
-	color: black;
-	font-weight: bolder;
-	text-transform: uppercase;
-	display: block;
-	padding: .5em;
-	border-radius: 5px;
-	font-size: 1.3em;
-	width: 45%;
-	margin-top: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 #left p, #right p {
 	margin: 0;
 	padding: 0;
 }
+#usergen #left, #usergen #right {
+	text-indent: 0;
+}
+#usergen #left p {
+	border: 1px solid black;
+	margin-bottom: .5em;
+	padding: 1em 0 1em 1em;
+	font-weight:bold;
+	line-height: 1.5em;
+}
+img#avatar {
+	margin-left: .3em;
+	display: inline-block;
+	margin-bottom: -1.5em;
+	padding-top: .25em;
+	padding-bottom: .5em;
+}
+textarea {
+	background: #fefbf7;
+	width: 96%;
+	height: 100%;
+	margin: 0 auto;
+	padding: .25em;
+	display: block;
+	border: none;
+}
+/*end styling of lorem and usergen pages and output*/
+
+

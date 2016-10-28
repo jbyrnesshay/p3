@@ -18,7 +18,7 @@ use P3\Http\Requests;
                 public function __construct() {
                         $random = new \Rych\Random\Random();
 
-                  $dicto = \File::get(storage_path('wordsEn.txt'));
+                  $dicto = \File::get(storage_path('dictionary\wordsEn.txt'));
 
                 $dictior = explode("\r\n", $dicto);
                 $dictiot = array_map('trim', $dictior);
@@ -26,16 +26,12 @@ use P3\Http\Requests;
 
                 for ($i=0; $i < 500; $i++) {
                  $randomnumber= $random->getRandomInteger(1, $size);
-                #$dictioz[$i] = $randomnumber;
-                #$dictiot[$random->getRandomInteger(1, $size)];
+                 
                 $dictato[$i] = $dictiot[$randomnumber];
                 }
-                #$again = $dictiot[array_rand($dictiot, 1000)];
-                /* for ($i=0; $i<count($again); $i++) {
-                        $dictato[$i] = $dictiot[$again[$i]];
-                 }*/
+               
                 $this->dictionary = $dictato;
-                #$this->dictionary = $again;
+                
 
 
 

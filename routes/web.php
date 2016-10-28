@@ -11,81 +11,33 @@
 |
 */
 
- # View all items
-#Route::get('/tests', 'TestController@index')->name('p3.index');
-
-Route::post('/lorem', 'LoremController@getLoremIpsumText')->name('lorem.process');
-Route::post('/usergen', 'UsergenController@generateUsers')->name('user.process');
-
+ 
+# route for home page view 
 Route::get('/', function () { 
     return view('welcome');
 })->name('welcome');
 
+# route for user generate page */
 Route::get('/usergen', function() {
     return view('/lorem/usergen');
-})->name('usergen.start');
+})->name('usergen');
 
+# route for create lorem ipsum page 
 Route::get('/lorem', function() {
     return view('/lorem/lorem'); 
-})->name('lorem.start');
+})->name('lorem');
+
+# process lorem ipsum
+Route::post('/lorem', 'LoremController@getLoremIpsumText')->name('lorem.process');
+
+# process user generation
+Route::post('/usergen', 'UsergenController@generateUsers')->name('user.process');
  
-Route::get('/contact', 'PageController@contact')->name('contact');
 
-Route::get('/help', 'PageController@help')->name('help');
-
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
-
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-/*
-
-#make it so the logs can be seen only locally
-if(App::environment() == 'local') {
+# make it so the logs can be seen only locally
+if (App::environment() == 'local') {
         Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 }
 
 
-# various practice routes
-Route::get('/debugbar', function() {
-    $data = Array('foo' => 'bar');
-    Debugbar::info($data);
-    Debugbar::info('Current environment: '.App::environment());
-    Debugbar::error('Error!');
-    Debugbar::warning('Watch out...');
-    Debugbar::addMessage('Another message', 'mylabel');
-
-    return 'Just demoing some of the features of Debugbar';
-});
-
-Route::get('/test', function() {
-        $camel = "funny people";
-        $teststring = config('mail.driver');
-        echo $teststring;
-        //echo e('<html>foontime</html>');
-        //return $camel;
-        //echo e($teststring);
-});
-
-Route::get('/practice', 'PracticeController@index')->name('practice.index');
-for ($i=0; $i<100; $i++) {
-    Route::get('/practice/'.$i, 'PracticeController@example'.$i)->name('practice.example'.$i);
-}
-
-//Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-
-Route::get('/random', function() {
-
-    $random = new Randomizer();
-    return $random->getRandomString(10);
-});
-
-Route::get('/example', function() {
-    return App::environment();
-});
-
-#test this and then remove
-/*Route::post('/books/create', function() {
-    dd(Request::all());
-});*/
+ 
