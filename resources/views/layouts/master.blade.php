@@ -12,12 +12,12 @@
 	</head>
  	<body>
 		<header>
-			<h1> Developer's Best Friend </h1>
+			<h1>Developer's Best Friend</h1>
 				<nav>
 				<ul>
-					<li><a href="{{route('welcome') }}">home</a></li>  
-					<li><a href="{{route('lorem') }}">lorem</a></li>
-					<li><a href="{{route('usergen') }}">users</a></li>
+					<li><a href="{{ route('welcome') }}">home</a></li>  
+					<li><a href="{{ route('lorem') }}">lorem</a></li>
+					<li><a href="{{ route('usergen') }}">users</a></li>
 				</ul>
 				</nav>
 		</header>
@@ -26,7 +26,7 @@
 			@yield ('content')
 		</section>
 		<footer>
-			<p>&copy; {{ date('Y')}} Joachim Byrnes-Shay</p>
+			<p>&copy; {{ date('Y') }} Joachim Byrnes-Shay</p>
 		</footer>
 	</body>
 </html>

@@ -2,21 +2,20 @@
 
 
 @section('head')
-    <link href="/css/styles.css" type="text/css" rel='stylesheet'>
-@stop
+@endsection
 
 @section('title', 'Developers Best Friend')
 
 @section('content')
-<h2 class="pageheading"> Fake User Generator </h2>
-<h3>how many users to generate? (1 to 50)</h3>
+<h2 class="pageheading">Fake User Generator</h2>
+<h3>How many users to generate? (1 to 50)</h3>
 <div id="formselect">
         <form method='POST' id="data" action='/usergen'>
                 {{ csrf_field() }}
-                <input type = "checkbox" id="avat" name ="makeavatar">  
+                <input type="checkbox" id="avat" name="makeavatar">  
                 <label for="avat">include custom avatar?</label>  
-                <input type = "checkbox" id="prof" name ="profile">  
-                 <label for="prof">include profile?</label>  
+                <input type="checkbox" id="prof" name="profile">  
+                <label for="prof">include profile?</label>  
                 <input type='text' name='users'>
                 <input type='submit' value='Submit'>
         </form>
@@ -24,7 +23,7 @@
 <div id="usergen">
         <!-- if server side validation errors, enter this block to display errors -->
         @if(count($errors) > 0)
-                <p class = "inform"> error found. see requirements below </p>
+                <p class="inform">error found. see requirements below</p>
                 @foreach ($errors->all() as $error)
                         <p class="error">{{ $error }}</p>
                 @endforeach
@@ -33,16 +32,16 @@
         @if (isset($usergens)) 
                 <article id="left">
                 <!-- decode the $usergens array to make it easy to make a nice display -->
-                <?php $userstring = json_decode($usergens); ?>
-                <h2> Here is a nice display of your user: </h2>
+                <?php $userstring=json_decode($usergens); ?>
+                <h2>Here is a nice display of your users:</h2>
                 
                 <!-- prepare php counter for looping through avatars if needed -->
                 <?php $i=0; ?>  
                 <!-- the display user process was tripping me up in its complexity, so i switched to standard php syntax here -->
                 <?php foreach ($userstring as $user) {
                         echo '<p>';
-                        echo 'NAME: '.$user->firstname.' '.$user->lastname.' <br>';
-                        echo 'ADDR: '.$user->address.' <br>';
+                        echo 'NAME: '.$user->firstname.' '.$user->lastname.'<br>';
+                        echo 'ADDR: '.$user->address.'<br>';
                         echo 'PHONE: '.$user->phone.'<br>';
                         echo 'EMAIL: '.$user->email.'<br>';
                         // html trips up on some symbols in the generated passwords, use htmlentities //
@@ -60,9 +59,9 @@
                         }?>
                 </article>
                 <article id="right">
-                        <h2> Here are your users in JSON format: </h2>
+                        <h2>Here are your users in JSON format:</h2>
                         <!-- $usergens was json encoded in the controller, so just display it -->
-                        <textarea> {{$usergens}} </textarea>
+                        <textarea>{{ $usergens }}</textarea>
                 </article>
         @endif
 </div>
